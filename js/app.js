@@ -21,11 +21,11 @@
     },
     {
       id: "default-2",
-      title: "سهم",
-      description: "Modern website with responsive design and interactive user experience.",
+      title: "Sahemtrv (سهم)",
+      description: "Travel and tourism booking platform with trip searching, accommodation booking, and package deals. Designed for seamless customer experience with secure payment processing and optimized performance.",
       image: "images/3.png",
       category: "web",
-      tags: ["HTML/CSS", "JavaScript", "PHP"],
+      tags: ["Laravel", "PHP", "MySQL"],
       link: "",
     },
     {
@@ -40,16 +40,16 @@
     {
       id: "default-4",
       title: "DBsaloni",
-      description: "Salon booking and management app with real-time scheduling and notifications.",
+      description: "Salon management app for booking and searching salons with appointment scheduling, salon listings, and user profiles. Intuitive UI for seamless bookings across Android and iOS.",
       image: "images/DBsalonis.png",
       category: "app",
-      tags: ["Flutter", "Firebase", "Stripe"],
+      tags: ["Flutter", "Dart", "Firebase"],
       link: "",
     },
     {
       id: "default-5",
       title: "MeQRCode",
-      description: "QR code generator and scanner with custom styling and sharing features.",
+      description: "Cross-platform QR code generator and scanner app with custom QR creation features, user-friendly interface, and secure data handling. Delivered bug-free within timeline.",
       image: "images/qrcode.png",
       category: "app",
       tags: ["Flutter", "Dart", "Camera"],
@@ -57,20 +57,20 @@
     },
     {
       id: "default-6",
-      title: "Zhab",
-      description: "E-commerce mobile application with payment integration and order tracking.",
+      title: "ZHAB",
+      description: "RFID-based application to scan and track pilgrims' luggage with real-time scanning, data retrieval, and a user-friendly interface designed for non-technical staff. Secure handling across Android and iOS.",
       image: "images/zhabs.png",
       category: "app",
-      tags: ["Flutter", "Node.js", "MongoDB"],
+      tags: ["Flutter", "RFID", "Dart"],
       link: "",
     },
     {
       id: "default-7",
       title: "Digital Guide",
-      description: "Digital tourism guide with maps, POIs, and offline capability.",
+      description: "App for searching and connecting with charitable organizations. Browse charity profiles, contact details, and services offered with smooth navigation across Android and iOS.",
       image: "images/Untitled design (6).png",
       category: "app",
-      tags: ["Flutter", "Google Maps", "SQLite"],
+      tags: ["Flutter", "REST API", "Dart"],
       link: "",
     },
     {
@@ -94,19 +94,19 @@
     {
       id: "default-10",
       title: "Moasherat",
-      description: "Business indicators and analytics website with interactive dashboards.",
+      description: "Consulting services website for government, private, and non-profit sectors with expert profiles, case studies, and client-consultant communication through contact forms and scheduling tools.",
       image: "images/moasherat.png",
       category: "web",
-      tags: ["Laravel", "Vue.js", "MySQL"],
+      tags: ["Laravel", "PHP", "MySQL"],
       link: "https://moasherat.co/",
     },
     {
       id: "default-11",
-      title: "Alamry",
-      description: "Corporate website with modern design and CMS integration.",
+      title: "Alamry Law Firm",
+      description: "Professional law firm website with legal services display, attorney profiles, client testimonials, inquiry forms, and appointment scheduling. Clean, responsive interface across all devices.",
       image: "images/Untitled design (4).png",
       category: "web",
-      tags: ["WordPress", "PHP", "JavaScript"],
+      tags: ["HTML/CSS", "JavaScript", "PHP"],
       link: "https://alamry.sa/",
     },
     {
@@ -491,28 +491,46 @@
     const form = document.getElementById("contact-form");
     if (!form) return;
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      const btn = form.querySelector("button[type='submit']");
+      const originalText = btn.innerHTML;
+
       const name = form.querySelector("#name").value;
       const email = form.querySelector("#email").value;
       const subject = form.querySelector("#subject").value;
       const message = form.querySelector("#message").value;
 
-      // Open mailto link with form data
-      const mailtoLink = `mailto:a.t.f.dev10@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\n\n${message}`
-      )}`;
-      window.location.href = mailtoLink;
+      // Show loading state
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      btn.disabled = true;
 
-      // Show feedback
-      const btn = form.querySelector("button[type='submit']");
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-check"></i> Opening Email Client...';
-      btn.style.background = "linear-gradient(135deg, #28a745, #20c997)";
+      try {
+        const response = await fetch("/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, subject, message }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+          btn.style.background = "linear-gradient(135deg, #28a745, #20c997)";
+          form.reset();
+        } else {
+          throw new Error(data.error || "Failed to send message");
+        }
+      } catch (error) {
+        console.error("Email error:", error);
+        btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Failed to Send';
+        btn.style.background = "linear-gradient(135deg, #b24f4b, #af3689)";
+      }
+
       setTimeout(() => {
         btn.innerHTML = originalText;
         btn.style.background = "";
-        form.reset();
+        btn.disabled = false;
       }, 3000);
     });
   }
