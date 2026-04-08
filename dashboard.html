@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Dashboard — Atif Adem Portfolio</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<style>
+		/* ======================== */
+		/*    LOGIN SCREEN STYLES   */
+		/* ======================== */
+		.login-overlay {
+			position: fixed;
+			inset: 0;
+			z-index: 5000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: var(--bg-primary);
+			transition: opacity 0.5s ease, visibility 0.5s ease;
+		}
+
+		.login-overlay.hidden {
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+		}
+
+		.login-card {
+			width: 100%;
+			max-width: 420px;
+			padding: 2.5rem;
+			background: rgba(255, 255, 255, 0.06);
+			backdrop-filter: blur(24px) saturate(180%);
+			-webkit-backdrop-filter: blur(24px) saturate(180%);
+			border: 1px solid rgba(255, 255, 255, 0.12);
+			border-radius: var(--radius-lg);
+			box-shadow: 0 8px 60px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+			text-align: center;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.login-card::before {
+			content: '';
+			position: absolute;
+			top: -50%;
+			left: -50%;
+			width: 200%;
+			height: 200%;
+			background: radial-gradient(circle at 30% 20%, rgba(175, 54, 137, 0.08) 0%, transparent 50%),
+			            radial-gradient(circle at 70% 80%, rgba(81, 105, 135, 0.06) 0%, transparent 50%);
+			pointer-events: none;
+		}
+
+		.login-card > * { position: relative; z-index: 1; }
+
+		.login-logo {
+			font-family: var(--font-code);
+			font-size: 2.2rem;
+			font-weight: 700;
+			margin-bottom: 0.5rem;
+		}
+
+		.login-logo .bracket { color: var(--accent-1); }
+
+		.login-subtitle {
+			color: var(--text-muted);
+			font-size: 0.9rem;
+			margin-bottom: 2rem;
+		}
+
+		.login-form .form-group {
+			margin-bottom: 1.2rem;
+			text-align: left;
+		}
+
+		.login-form .form-group label {
+			display: block;
+			margin-bottom: 6px;
+			font-size: 0.85rem;
+			font-weight: 600;
+			color: var(--text-secondary);
+		}
+
+		.login-form .input-wrapper {
+			position: relative;
+		}
+
+		.login-form .input-wrapper i {
+			position: absolute;
+			left: 16px;
+			top: 50%;
+			transform: translateY(-50%);
+			color: var(--text-muted);
+			font-size: 0.9rem;
+			transition: var(--transition);
+		}
+
+		.login-form .input-wrapper input {
+			width: 100%;
+			padding: 14px 18px 14px 44px;
+			background: rgba(255, 255, 255, 0.04);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: var(--radius-sm);
+			color: var(--text-primary);
+			font-size: 0.95rem;
+			font-family: var(--font-main);
+			transition: var(--transition);
+			outline: none;
+			box-sizing: border-box;
+		}
+
+		.login-form .input-wrapper input:focus {
+			border-color: var(--accent-1);
+			background: rgba(175, 54, 137, 0.06);
+			box-shadow: 0 0 20px rgba(175, 54, 137, 0.15);
+		}
+
+		.login-form .input-wrapper input:focus + i,
+		.login-form .input-wrapper input:focus ~ i {
+			color: var(--accent-1);
+		}
+
+		.login-error {
+			color: var(--accent-3);
+			font-size: 0.85rem;
+			margin-bottom: 1rem;
+			min-height: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 6px;
+		}
+
+		.login-btn {
+			width: 100%;
+			padding: 14px;
+			background: var(--gradient-1);
+			border: none;
+			border-radius: var(--radius-sm);
+			color: #fff;
+			font-size: 1rem;
+			font-weight: 700;
+			cursor: pointer;
+			transition: var(--transition);
+			font-family: var(--font-main);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+		}
+
+		.login-btn:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 25px rgba(175, 54, 137, 0.4);
+		}
+
+		.login-footer {
+			margin-top: 1.5rem;
+			font-size: 0.8rem;
+			color: var(--text-muted);
+		}
+
+		.login-footer a {
+			color: var(--accent-2);
+			text-decoration: none;
+		}
+
+		/* ======================== */
+		/*   DASHBOARD GLASS STYLES */
+		/* ======================== */
+		.dashboard {
+			min-height: 100vh;
+			padding: 100px 0 60px;
+			position: relative;
+			z-index: 1;
+		}
+
+		.dash-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 2rem;
+			flex-wrap: wrap;
+			gap: 16px;
+		}
+
+		.dash-header h1 {
+			font-size: 1.8rem;
+			font-weight: 800;
+			background: var(--gradient-1);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+
+		.dash-stats {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 16px;
+			margin-bottom: 3rem;
+		}
+
+		.dash-stat {
+			padding: 20px;
+			background: rgba(255, 255, 255, 0.06);
+			backdrop-filter: blur(16px) saturate(180%);
+			-webkit-backdrop-filter: blur(16px) saturate(180%);
+			border: 1px solid rgba(255, 255, 255, 0.12);
+			border-radius: var(--radius-md);
+			text-align: center;
+			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+			transition: var(--transition);
+		}
+
+		.dash-stat:hover {
+			background: rgba(255, 255, 255, 0.1);
+			border-color: rgba(175, 54, 137, 0.4);
+			transform: translateY(-4px);
+			box-shadow: 0 0 25px rgba(175, 54, 137, 0.15), 0 8px 32px rgba(0, 0, 0, 0.37);
+		}
+
+		.dash-stat .number {
+			font-size: 2rem;
+			font-weight: 800;
+			background: var(--gradient-1);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+
+		.dash-stat .label {
+			color: var(--text-secondary);
+			font-size: 0.85rem;
+			margin-top: 4px;
+		}
+
+		/* Modal — glass */
+		.modal-overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0.5);
+			backdrop-filter: blur(12px);
+			-webkit-backdrop-filter: blur(12px);
+			z-index: 2000;
+			display: none;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+		}
+
+		.modal-overlay.active {
+			display: flex;
+		}
+
+		.modal {
+			background: rgba(18, 18, 30, 0.85);
+			backdrop-filter: blur(24px) saturate(180%);
+			-webkit-backdrop-filter: blur(24px) saturate(180%);
+			border: 1px solid rgba(255, 255, 255, 0.12);
+			border-radius: var(--radius-lg);
+			padding: 2rem;
+			width: 100%;
+			max-width: 600px;
+			max-height: 90vh;
+			overflow-y: auto;
+			position: relative;
+			box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+		}
+
+		.modal h2 {
+			font-size: 1.4rem;
+			font-weight: 700;
+			margin-bottom: 1.5rem;
+			color: var(--text-primary);
+		}
+
+		.modal-close {
+			position: absolute;
+			top: 16px;
+			right: 16px;
+			width: 36px;
+			height: 36px;
+			background: rgba(255, 255, 255, 0.08);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.12);
+			border-radius: 50%;
+			color: var(--text-secondary);
+			font-size: 1rem;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: var(--transition);
+		}
+
+		.modal-close:hover {
+			background: rgba(255, 107, 157, 0.2);
+			border-color: var(--accent-3);
+			color: var(--accent-3);
+		}
+
+		/* Select — glass */
+		.form-group select {
+			width: 100%;
+			padding: 14px 18px;
+			background: rgba(255, 255, 255, 0.04);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: var(--radius-sm);
+			color: var(--text-primary);
+			font-size: 0.95rem;
+			font-family: var(--font-main);
+			transition: var(--transition);
+			outline: none;
+			-webkit-appearance: none;
+			appearance: none;
+		}
+
+		.form-group select:focus {
+			border-color: var(--accent-1);
+			background: rgba(175, 54, 137, 0.06);
+			box-shadow: 0 0 20px rgba(175, 54, 137, 0.15);
+		}
+
+		.form-group select option {
+			background: var(--bg-secondary);
+			color: var(--text-primary);
+		}
+
+		/* Project List — glass */
+		.project-list {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+		}
+
+		.project-list-item {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			padding: 16px 20px;
+			background: rgba(255, 255, 255, 0.05);
+			backdrop-filter: blur(16px);
+			-webkit-backdrop-filter: blur(16px);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: var(--radius-md);
+			transition: var(--transition);
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+		}
+
+		.project-list-item:hover {
+			border-color: rgba(175, 54, 137, 0.4);
+			background: rgba(255, 255, 255, 0.08);
+			transform: translateX(4px);
+			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+		}
+
+		.project-list-thumb {
+			width: 60px;
+			height: 60px;
+			border-radius: var(--radius-sm);
+			object-fit: cover;
+			flex-shrink: 0;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		.project-list-info {
+			flex: 1;
+			min-width: 0;
+		}
+
+		.project-list-info h4 {
+			font-size: 1rem;
+			font-weight: 600;
+			color: var(--text-primary);
+			margin-bottom: 4px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.project-list-info .meta {
+			font-size: 0.8rem;
+			color: var(--text-muted);
+		}
+
+		.project-list-info .category-badge {
+			display: inline-block;
+			padding: 2px 10px;
+			background: rgba(175, 54, 137, 0.15);
+			backdrop-filter: blur(8px);
+			border-radius: 20px;
+			font-size: 0.75rem;
+			font-weight: 600;
+			color: var(--accent-2);
+			margin-right: 8px;
+		}
+
+		.project-list-actions {
+			display: flex;
+			gap: 8px;
+			flex-shrink: 0;
+		}
+
+		.action-btn {
+			width: 36px;
+			height: 36px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: rgba(255, 255, 255, 0.06);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: var(--radius-sm);
+			color: var(--text-secondary);
+			cursor: pointer;
+			transition: var(--transition);
+			font-size: 0.9rem;
+		}
+
+		.action-btn:hover {
+			background: var(--accent-1);
+			border-color: var(--accent-1);
+			color: #fff;
+			box-shadow: 0 4px 15px rgba(175, 54, 137, 0.4);
+		}
+
+		.action-btn.delete:hover {
+			background: var(--accent-3);
+			border-color: var(--accent-3);
+			box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+		}
+
+		.empty-state {
+			text-align: center;
+			padding: 4rem 2rem;
+			color: var(--text-muted);
+			background: rgba(255, 255, 255, 0.03);
+			backdrop-filter: blur(10px);
+			border: 1px dashed rgba(255, 255, 255, 0.08);
+			border-radius: var(--radius-lg);
+		}
+
+		.empty-state i {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+			color: var(--accent-1);
+			opacity: 0.5;
+		}
+
+		.empty-state h3 {
+			font-size: 1.2rem;
+			margin-bottom: 0.5rem;
+			color: var(--text-secondary);
+		}
+
+		.section-divider {
+			margin-top: 3rem;
+			margin-bottom: 1.5rem;
+			padding-bottom: 12px;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.section-divider h3 {
+			font-size: 1.1rem;
+			font-weight: 700;
+			color: var(--text-primary);
+		}
+
+		.section-divider .count {
+			font-size: 0.85rem;
+			color: var(--text-muted);
+		}
+
+		/* Image preview — glass */
+		.image-preview {
+			width: 100%;
+			height: 160px;
+			border: 2px dashed rgba(255, 255, 255, 0.12);
+			border-radius: var(--radius-md);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 16px;
+			overflow: hidden;
+			transition: var(--transition);
+			cursor: pointer;
+			position: relative;
+			background: rgba(255, 255, 255, 0.03);
+			backdrop-filter: blur(8px);
+		}
+
+		.image-preview:hover {
+			border-color: var(--accent-1);
+			background: rgba(175, 54, 137, 0.05);
+		}
+
+		.image-preview img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.image-preview .placeholder {
+			text-align: center;
+			color: var(--text-muted);
+		}
+
+		.image-preview .placeholder i {
+			font-size: 2rem;
+			margin-bottom: 8px;
+			display: block;
+		}
+
+		/* Toast — glass */
+		.toast {
+			position: fixed;
+			bottom: 30px;
+			left: 50%;
+			transform: translateX(-50%) translateY(100px);
+			padding: 14px 28px;
+			background: rgba(175, 54, 137, 0.85);
+			backdrop-filter: blur(16px);
+			-webkit-backdrop-filter: blur(16px);
+			color: #fff;
+			border: 1px solid rgba(255, 255, 255, 0.15);
+			border-radius: var(--radius-xl);
+			font-weight: 600;
+			font-size: 0.9rem;
+			z-index: 3000;
+			opacity: 0;
+			transition: all 0.4s ease;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			box-shadow: 0 10px 40px rgba(175, 54, 137, 0.4);
+		}
+
+		.toast.show {
+			opacity: 1;
+			transform: translateX(-50%) translateY(0);
+		}
+
+		.toast.success {
+			background: rgba(40, 167, 69, 0.85);
+			backdrop-filter: blur(16px);
+			box-shadow: 0 10px 40px rgba(40, 167, 69, 0.4);
+		}
+
+		.toast.error {
+			background: rgba(220, 53, 69, 0.85);
+			backdrop-filter: blur(16px);
+			box-shadow: 0 10px 40px rgba(220, 53, 69, 0.4);
+		}
+
+		/* Logout button */
+		.btn-logout {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			padding: 8px 18px;
+			background: rgba(255, 107, 157, 0.1);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 107, 157, 0.3);
+			border-radius: var(--radius-sm);
+			color: var(--accent-3);
+			font-size: 0.85rem;
+			font-weight: 600;
+			cursor: pointer;
+			transition: var(--transition);
+			font-family: var(--font-main);
+		}
+
+		.btn-logout:hover {
+			background: rgba(255, 107, 157, 0.2);
+			border-color: var(--accent-3);
+			box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+		}
+
+		@media (max-width: 768px) {
+			.login-card { margin: 0 16px; padding: 2rem 1.5rem; }
+			.dash-header { flex-direction: column; align-items: flex-start; }
+			.project-list-item { flex-direction: column; text-align: center; }
+			.project-list-actions { justify-content: center; }
+		}
+	</style>
+</head>
+
+<body>
+
+	<canvas id="particles-canvas"></canvas>
+
+	<!-- ========== LOGIN SCREEN ========== -->
+	<div class="login-overlay" id="login-overlay">
+		<div class="login-card">
+			<div class="login-logo">
+				<img src="images/AtiffLogo.png" alt="Atif Logo" class="logo-img login-logo-img">
+			</div>
+			<p class="login-subtitle">Dashboard Login — Authorized Access Only</p>
+			<form class="login-form" id="login-form">
+				<div class="form-group">
+					<label for="login-username">Username</label>
+					<div class="input-wrapper">
+						<input type="text" id="login-username" placeholder="Enter username" autocomplete="username" required>
+						<i class="fas fa-user"></i>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="login-password">Password</label>
+					<div class="input-wrapper">
+						<input type="password" id="login-password" placeholder="Enter password" autocomplete="current-password" required>
+						<i class="fas fa-lock"></i>
+					</div>
+				</div>
+				<div class="login-error" id="login-error"></div>
+				<button type="submit" class="login-btn">
+					<i class="fas fa-sign-in-alt"></i> Sign In
+				</button>
+			</form>
+			<div class="login-footer">
+				<a href="index.html">← Back to Portfolio</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Navigation -->
+	<nav class="navbar scrolled" id="navbar">
+		<div class="nav-container">
+			<a href="index.html" class="nav-logo">
+				<img src="images/AtiffLogo.png" alt="Atif Logo" class="logo-img">
+			</a>
+			<ul class="nav-menu" id="nav-menu">
+				<li><a href="index.html" class="nav-link">← Back to Portfolio</a></li>
+				<li><button class="btn-logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Dashboard -->
+	<section class="dashboard">
+		<div class="container">
+			<div class="dash-header">
+				<h1><i class="fas fa-tachometer-alt"></i> Project Dashboard</h1>
+				<button class="btn-primary" onclick="openModal()">
+					<i class="fas fa-plus"></i> Add New Project
+				</button>
+			</div>
+
+			<!-- Stats -->
+			<div class="dash-stats">
+				<div class="dash-stat">
+					<div class="number" id="total-projects">0</div>
+					<div class="label">Total Projects</div>
+				</div>
+				<div class="dash-stat">
+					<div class="number" id="app-count">0</div>
+					<div class="label">Mobile Apps</div>
+				</div>
+				<div class="dash-stat">
+					<div class="number" id="web-count">0</div>
+					<div class="label">Websites</div>
+				</div>
+				<div class="dash-stat">
+					<div class="number" id="custom-count">0</div>
+					<div class="label">Custom Added</div>
+				</div>
+			</div>
+
+			<!-- Custom Projects -->
+			<div class="section-divider">
+				<h3><i class="fas fa-star"></i> Your Custom Projects</h3>
+				<span class="count" id="custom-label">0 projects</span>
+			</div>
+			<div class="project-list" id="custom-projects-list">
+				<!-- Rendered dynamically -->
+			</div>
+
+			<!-- Default Projects -->
+			<div class="section-divider">
+				<h3><i class="fas fa-folder"></i> Default Projects</h3>
+				<span class="count" id="default-label">0 projects</span>
+			</div>
+			<div class="project-list" id="default-projects-list">
+				<!-- Rendered dynamically -->
+			</div>
+		</div>
+	</section>
+
+	<!-- Add/Edit Modal -->
+	<div class="modal-overlay" id="modal-overlay">
+		<div class="modal">
+			<button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+			<h2 id="modal-title"><i class="fas fa-plus-circle"></i> Add New Project</h2>
+			<form id="project-form">
+				<input type="hidden" id="project-id">
+
+				<div class="form-group">
+					<label for="project-title">Project Title *</label>
+					<input type="text" id="project-title" required placeholder="e.g. My Awesome App">
+				</div>
+
+				<div class="form-group">
+					<label for="project-desc">Description</label>
+					<textarea id="project-desc" rows="3" placeholder="Brief description of the project..."></textarea>
+				</div>
+
+				<div class="contact-form .form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+					<div class="form-group">
+						<label for="project-category">Category *</label>
+						<select id="project-category" required>
+							<option value="app">Mobile App</option>
+							<option value="web">Website</option>
+							<option value="backend">Backend</option>
+							<option value="cloud">Cloud</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="project-link">Live URL (optional)</label>
+						<input type="url" id="project-link" placeholder="https://...">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="project-tags">Tags (comma separated)</label>
+					<input type="text" id="project-tags" placeholder="Flutter, Firebase, REST API">
+				</div>
+
+				<div class="form-group">
+					<label>Project Image</label>
+					<div class="image-preview" onclick="document.getElementById('project-image-input').click()">
+						<div class="placeholder" id="image-placeholder">
+							<i class="fas fa-cloud-upload-alt"></i>
+							<span>Click to upload image</span>
+						</div>
+						<img id="image-preview-img" src="" alt="" style="display:none">
+					</div>
+					<input type="file" id="project-image-input" accept="image/*" style="display:none" onchange="previewImage(event)">
+					<div class="form-group" style="margin-top: 8px;">
+						<label for="project-image-url">Or paste image path</label>
+						<input type="text" id="project-image-url" placeholder="images/my-project.png">
+					</div>
+				</div>
+
+				<button type="submit" class="btn-primary btn-full">
+					<i class="fas fa-save"></i> Save Project
+				</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Toast -->
+	<div class="toast" id="toast"></div>
+
+	<script>
+		// ============================
+		// Authentication System
+		// ============================
+
+		// Default credentials — change these!
+		const DASH_USER = "atif";
+		const DASH_PASS = "admin123";
+
+		function isLoggedIn() {
+			return sessionStorage.getItem("dash_auth") === "true";
+		}
+
+		function checkAuth() {
+			const overlay = document.getElementById("login-overlay");
+			if (isLoggedIn()) {
+				overlay.classList.add("hidden");
+			} else {
+				overlay.classList.remove("hidden");
+			}
+		}
+
+		function logout() {
+			sessionStorage.removeItem("dash_auth");
+			checkAuth();
+			showToast("Logged out successfully", "error");
+		}
+
+		document.getElementById("login-form").addEventListener("submit", function(e) {
+			e.preventDefault();
+			const user = document.getElementById("login-username").value.trim();
+			const pass = document.getElementById("login-password").value;
+			const errorEl = document.getElementById("login-error");
+
+			if (user === DASH_USER && pass === DASH_PASS) {
+				sessionStorage.setItem("dash_auth", "true");
+				checkAuth();
+				showToast("Welcome back, Atif! 🚀", "success");
+				errorEl.innerHTML = "";
+			} else {
+				errorEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> Invalid username or password';
+				document.getElementById("login-password").value = "";
+
+				// Shake animation
+				const card = document.querySelector(".login-card");
+				card.style.animation = "none";
+				card.offsetHeight; // trigger reflow
+				card.style.animation = "shake 0.5s ease";
+			}
+		});
+
+		// Shake animation for wrong credentials
+		const shakeStyle = document.createElement("style");
+		shakeStyle.textContent = `@keyframes shake { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-10px)} 40%,80%{transform:translateX(10px)} }`;
+		document.head.appendChild(shakeStyle);
+
+		// Run auth check on load
+		checkAuth();
+
+		const defaultProjects = [
+			{ id: "default-1", title: "المركز العام للنقل", description: "Transportation management system.", image: "images/2.png", category: "app", tags: ["Flutter", "Firebase"] },
+			{ id: "default-2", title: "سهم", description: "Modern responsive website.", image: "images/3.png", category: "web", tags: ["HTML/CSS", "JavaScript"] },
+			{ id: "default-3", title: "امتثال", description: "Compliance management application.", image: "images/4.png", category: "app", tags: ["Flutter", "REST API"] },
+			{ id: "default-4", title: "DBsaloni", description: "Salon booking and management app.", image: "images/DBsalonis.png", category: "app", tags: ["Flutter", "Firebase"] },
+			{ id: "default-5", title: "MeQRCode", description: "QR code generator and scanner.", image: "images/qrcode.png", category: "app", tags: ["Flutter", "Dart"] },
+			{ id: "default-6", title: "Zhab", description: "E-commerce mobile application.", image: "images/zhabs.png", category: "app", tags: ["Flutter", "Node.js"] },
+			{ id: "default-7", title: "Digital Guide", description: "Digital tourism guide app.", image: "images/Untitled design (6).png", category: "app", tags: ["Flutter", "Maps"] },
+			{ id: "default-8", title: "Shaheen", description: "Multi-feature application.", image: "images/shaheen.png", category: "app", tags: ["Flutter", "Firebase"] },
+			{ id: "default-9", title: "Let's Go", description: "Travel companion app.", image: "images/letgo.png", category: "app", tags: ["Flutter", "REST API"] },
+			{ id: "default-10", title: "Moasherat", description: "Business analytics website.", image: "images/moasherat.png", category: "web", tags: ["Laravel", "Vue.js"], link: "https://moasherat.co/" },
+			{ id: "default-11", title: "Alamry", description: "Corporate website.", image: "images/Untitled design (4).png", category: "web", tags: ["WordPress", "PHP"], link: "https://alamry.sa/" },
+			{ id: "default-12", title: "Maham Expo", description: "Exhibition and expo management platform.", image: "images/maham-expo.png", category: "web", tags: ["Laravel", "Vue.js", "Google Cloud"], link: "" },
+		];
+
+		function getCustomProjects() {
+			const stored = localStorage.getItem("portfolio_projects");
+			return stored ? JSON.parse(stored) : [];
+		}
+
+		function saveCustomProjects(projects) {
+			localStorage.setItem("portfolio_projects", JSON.stringify(projects));
+		}
+
+		function showToast(message, type = "success") {
+			const toast = document.getElementById("toast");
+			toast.textContent = message;
+			toast.className = `toast ${type} show`;
+			setTimeout(() => { toast.classList.remove("show"); }, 3000);
+		}
+
+		function updateStats() {
+			const custom = getCustomProjects();
+			const all = [...defaultProjects, ...custom];
+
+			document.getElementById("total-projects").textContent = all.length;
+			document.getElementById("app-count").textContent = all.filter(p => p.category === "app").length;
+			document.getElementById("web-count").textContent = all.filter(p => p.category === "web" || p.category === "backend" || p.category === "cloud").length;
+			document.getElementById("custom-count").textContent = custom.length;
+			document.getElementById("custom-label").textContent = `${custom.length} projects`;
+			document.getElementById("default-label").textContent = `${defaultProjects.length} projects`;
+		}
+
+		function renderProjectList(projects, containerId, isCustom = false) {
+			const container = document.getElementById(containerId);
+
+			if (projects.length === 0 && isCustom) {
+				container.innerHTML = `
+					<div class="empty-state">
+						<i class="fas fa-folder-open"></i>
+						<h3>No custom projects yet</h3>
+						<p>Click "Add New Project" to get started!</p>
+					</div>`;
+				return;
+			}
+
+			container.innerHTML = projects.map(project => `
+				<div class="project-list-item">
+					<img src="${project.image}" alt="${project.title}" class="project-list-thumb"
+						onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjMWExYTI1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM2YzYzZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7wn5OBPC90ZXh0Pjwvc3ZnPg=='">
+					<div class="project-list-info">
+						<h4>${project.title}</h4>
+						<div class="meta">
+							<span class="category-badge">${project.category}</span>
+							${(project.tags || []).join(", ")}
+						</div>
+					</div>
+					<div class="project-list-actions">
+						${isCustom ? `
+							<button class="action-btn" onclick="editProject('${project.id}')" title="Edit">
+								<i class="fas fa-edit"></i>
+							</button>
+							<button class="action-btn delete" onclick="deleteProject('${project.id}')" title="Delete">
+								<i class="fas fa-trash"></i>
+							</button>
+						` : `
+							<span style="color: var(--text-muted); font-size: 0.75rem;">Default</span>
+						`}
+					</div>
+				</div>
+			`).join("");
+		}
+
+		function renderDashboard() {
+			updateStats();
+			renderProjectList(getCustomProjects(), "custom-projects-list", true);
+			renderProjectList(defaultProjects, "default-projects-list", false);
+		}
+
+		// Modal
+		function openModal(projectId = null) {
+			const overlay = document.getElementById("modal-overlay");
+			const form = document.getElementById("project-form");
+			const title = document.getElementById("modal-title");
+
+			form.reset();
+			document.getElementById("project-id").value = "";
+			document.getElementById("image-preview-img").style.display = "none";
+			document.getElementById("image-placeholder").style.display = "block";
+
+			if (projectId) {
+				title.innerHTML = '<i class="fas fa-edit"></i> Edit Project';
+				const projects = getCustomProjects();
+				const project = projects.find(p => p.id === projectId);
+				if (project) {
+					document.getElementById("project-id").value = project.id;
+					document.getElementById("project-title").value = project.title;
+					document.getElementById("project-desc").value = project.description || "";
+					document.getElementById("project-category").value = project.category;
+					document.getElementById("project-link").value = project.link || "";
+					document.getElementById("project-tags").value = (project.tags || []).join(", ");
+					document.getElementById("project-image-url").value = project.image || "";
+
+					if (project.image) {
+						const previewImg = document.getElementById("image-preview-img");
+						previewImg.src = project.image;
+						previewImg.style.display = "block";
+						document.getElementById("image-placeholder").style.display = "none";
+					}
+				}
+			} else {
+				title.innerHTML = '<i class="fas fa-plus-circle"></i> Add New Project';
+			}
+
+			overlay.classList.add("active");
+		}
+
+		function closeModal() {
+			document.getElementById("modal-overlay").classList.remove("active");
+		}
+
+		function previewImage(event) {
+			const file = event.target.files[0];
+			if (file) {
+				const reader = new FileReader();
+				reader.onload = function(e) {
+					const previewImg = document.getElementById("image-preview-img");
+					previewImg.src = e.target.result;
+					previewImg.style.display = "block";
+					document.getElementById("image-placeholder").style.display = "none";
+				};
+				reader.readAsDataURL(file);
+			}
+		}
+
+		// CRUD
+		document.getElementById("project-form").addEventListener("submit", function(e) {
+			e.preventDefault();
+
+			const id = document.getElementById("project-id").value;
+			const previewImg = document.getElementById("image-preview-img");
+			const imageUrl = document.getElementById("project-image-url").value;
+			let image = imageUrl || (previewImg.style.display !== "none" ? previewImg.src : "");
+
+			const project = {
+				id: id || "custom-" + Date.now(),
+				title: document.getElementById("project-title").value,
+				description: document.getElementById("project-desc").value,
+				category: document.getElementById("project-category").value,
+				link: document.getElementById("project-link").value,
+				tags: document.getElementById("project-tags").value.split(",").map(t => t.trim()).filter(Boolean),
+				image: image,
+			};
+
+			const projects = getCustomProjects();
+
+			if (id) {
+				const index = projects.findIndex(p => p.id === id);
+				if (index >= 0) projects[index] = project;
+				showToast("Project updated successfully! ✏️");
+			} else {
+				projects.push(project);
+				showToast("Project added successfully! 🚀");
+			}
+
+			saveCustomProjects(projects);
+			closeModal();
+			renderDashboard();
+		});
+
+		function editProject(id) {
+			openModal(id);
+		}
+
+		function deleteProject(id) {
+			if (!confirm("Are you sure you want to delete this project?")) return;
+			const projects = getCustomProjects().filter(p => p.id !== id);
+			saveCustomProjects(projects);
+			renderDashboard();
+			showToast("Project deleted! 🗑️", "error");
+		}
+
+		// Close modal on overlay click
+		document.getElementById("modal-overlay").addEventListener("click", function(e) {
+			if (e.target === this) closeModal();
+		});
+
+		// Close modal on Escape key
+		document.addEventListener("keydown", function(e) {
+			if (e.key === "Escape") closeModal();
+		});
+
+		// Init
+		renderDashboard();
+
+		// Particle init (reuse from main)
+		(function initParticles() {
+			const canvas = document.getElementById("particles-canvas");
+			if (!canvas) return;
+			const ctx = canvas.getContext("2d");
+			let particles = [];
+
+			function resize() {
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+			}
+
+			class Particle {
+				constructor() { this.reset(); }
+				reset() {
+					this.x = Math.random() * canvas.width;
+					this.y = Math.random() * canvas.height;
+					this.size = Math.random() * 2 + 0.5;
+					this.speedX = (Math.random() - 0.5) * 0.3;
+					this.speedY = (Math.random() - 0.5) * 0.3;
+					this.opacity = Math.random() * 0.3 + 0.1;
+				}
+				update() {
+					this.x += this.speedX;
+					this.y += this.speedY;
+					if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+					if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+				}
+				draw() {
+					ctx.beginPath();
+					ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+					ctx.fillStyle = `rgba(175, 54, 137, ${this.opacity})`;
+					ctx.fill();
+				}
+			}
+
+			function init() {
+				particles = [];
+				for (let i = 0; i < 50; i++) particles.push(new Particle());
+			}
+
+			function animate() {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				particles.forEach(p => { p.update(); p.draw(); });
+				requestAnimationFrame(animate);
+			}
+
+			resize();
+			init();
+			animate();
+			window.addEventListener("resize", () => { resize(); init(); });
+		})();
+	</script>
+</body>
+</html>
