@@ -30,12 +30,12 @@
     },
     {
       id: "default-3",
-      title: "امتثال (Compliance)",
-      description: "Compliance management application for regulatory tracking and reporting.",
-      image: "images/4.png",
-      category: "app",
-      tags: ["Flutter", "REST API", "Bloc"],
-      link: "",
+      title: "Imtithal (امتثال)",
+      description: "Hajj compliance monitoring system for service companies (versions 46 & 47) under the Ministry of Hajj and Umrah. Processes 3.7M+ data entries, 300K+ evaluations, and 63K+ registered users using smart digital solutions.",
+      image: "images/imtithal.png",
+      category: "web",
+      tags: ["Laravel", "Flutter", "REST API"],
+      link: "https://www.imtithal47.com/",
     },
     {
       id: "default-4",
@@ -112,11 +112,47 @@
     {
       id: "default-12",
       title: "Maham Expo",
-      description: "Exhibition and expo management platform with event scheduling, booth booking, and visitor registration.",
+      description: "Integrated expo management ecosystem with 6 smart platforms (investor, merchant, sponsor portals), AI engine, Digital Twin, C4I command center, IoT crowd management, and ZATCA-compliant automation. Includes Flutter mobile app with CI/CD pipeline.",
       image: "images/maham-expo.png",
       category: "web",
-      tags: ["Laravel", "Vue.js", "Google Cloud"],
-      link: "",
+      tags: ["React", "Node.js", "Flutter", "AI", "AWS"],
+      link: "https://mahamexpo.sa/",
+    },
+    {
+      id: "default-13",
+      title: "Trqem (ترقيم)",
+      description: "Digital marketing and creative agency platform specializing in event management, content creation, media coordination, 3D design services, and digital publishing for Saudi Arabian brands and organizations.",
+      image: "images/trqem.png",
+      category: "web",
+      tags: ["WordPress", "PHP", "JavaScript"],
+      link: "https://trqem.sa/",
+    },
+    {
+      id: "default-14",
+      title: "Nahj (نهج)",
+      description: "Corporate website with modern branding, responsive design, and integrated digital services for a Saudi-based company.",
+      image: "images/nahj.png",
+      category: "web",
+      tags: ["HTML/CSS", "JavaScript", "PHP"],
+      link: "https://nahj.com.sa/",
+    },
+    {
+      id: "default-15",
+      title: "Khandamh (خندمة)",
+      description: "Award-winning creative media platform for Hajj & Umrah content. Produces podcasts, videos, and visual stories about pilgrim services. Won 3rd place in Mediathon Hajj & Umrah 2024.",
+      image: "images/khandamh.png",
+      category: "web",
+      tags: ["WordPress", "PHP", "Media"],
+      link: "https://khandamh.com/",
+    },
+    {
+      id: "default-16",
+      title: "Zimam (زمام القوة)",
+      description: "Enterprise operations company website for infrastructure development, crowd management, facility operations, event management, and digital transformation. Serves SAR, King Abdulaziz University, Public Security, and Vision 2030 projects.",
+      image: "images/zimam.png",
+      category: "web",
+      tags: ["Laravel", "PHP", "MySQL"],
+      link: "https://zimam.sa/",
     },
   ];
 
@@ -505,6 +541,8 @@
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       btn.disabled = true;
 
+      let sent = false;
+
       try {
         const response = await fetch("/api/send-email", {
           method: "POST",
@@ -512,19 +550,26 @@
           body: JSON.stringify({ name, email, subject, message }),
         });
 
-        const data = await response.json();
-
         if (response.ok) {
+          const data = await response.json();
+          sent = true;
           btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
           btn.style.background = "linear-gradient(135deg, #28a745, #20c997)";
           form.reset();
         } else {
-          throw new Error(data.error || "Failed to send message");
+          throw new Error("API not available");
         }
       } catch (error) {
-        console.error("Email error:", error);
-        btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Failed to Send';
-        btn.style.background = "linear-gradient(135deg, #b24f4b, #af3689)";
+        // Fallback to mailto
+        console.warn("API unavailable, using mailto fallback");
+        const mailtoLink = `mailto:a.addam710@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\n\n${message}`
+        )}`;
+        window.location.href = mailtoLink;
+        sent = true;
+        btn.innerHTML = '<i class="fas fa-check"></i> Opening Email Client...';
+        btn.style.background = "linear-gradient(135deg, #28a745, #20c997)";
+        form.reset();
       }
 
       setTimeout(() => {
