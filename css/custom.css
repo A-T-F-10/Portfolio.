@@ -580,6 +580,13 @@ img {
 .card-2 i { color: #4285F4; }
 .card-3 i { color: #2496ED; }
 .card-4 i { color: var(--accent-3); }
+.card-5 i { color: #e5534b; }
+
+.card-5 {
+  top: -10px;
+  left: 40px;
+  animation: float-card 6s ease-in-out 1s infinite;
+}
 
 @keyframes float-card {
   0%, 100% { transform: translateY(0px); }
