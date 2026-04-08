@@ -129,11 +129,11 @@
     },
     {
       id: "default-14",
-      title: "Nahj (نهج)",
-      description: "Corporate website with modern branding, responsive design, and integrated digital services for a Saudi-based company.",
+      title: "Nahj (نهج المعرفة)",
+      description: "E-learning platform for Nahj Al-Maarifa Training Institute offering qualifying and development courses. Features interactive learning methods, expert-designed training programs, and innovative educational content across multiple fields.",
       image: "images/nahj.png",
       category: "web",
-      tags: ["HTML/CSS", "JavaScript", "PHP"],
+      tags: ["Laravel", "PHP", "MySQL"],
       link: "https://nahj.com.sa/",
     },
     {
