@@ -13,7 +13,7 @@
     {
       id: "default-1",
       title: "المركز العام للنقل",
-      description: "Transportation management system for efficient fleet and route tracking.",
+      description: "Bus and transportation compliance monitoring system — similar to Imtithal but for buses and gathering points. Tracks fleet operations, station compliance, and route management for Hajj transportation services.",
       image: "images/2.png",
       category: "app",
       tags: ["Flutter", "Firebase", "Maps API"],
@@ -25,7 +25,7 @@
       description: "Travel and tourism booking platform with trip searching, accommodation booking, and package deals. Designed for seamless customer experience with secure payment processing and optimized performance.",
       image: "images/3.png",
       category: "web",
-      tags: ["Laravel", "PHP", "MySQL"],
+      tags: ["Laravel", "PHP", "MySQL", "Backend"],
       link: "",
     },
     {
@@ -34,7 +34,7 @@
       description: "Hajj compliance monitoring system for service companies (versions 46 & 47) under the Ministry of Hajj and Umrah. Processes 3.7M+ data entries, 300K+ evaluations, and 63K+ registered users using smart digital solutions.",
       image: "images/imtithal.png",
       category: "web",
-      tags: ["Laravel", "Flutter", "REST API"],
+      tags: ["Laravel", "Flutter", "REST API", "Cloud"],
       link: "https://www.imtithal47.com/",
     },
     {
@@ -76,16 +76,16 @@
     {
       id: "default-8",
       title: "Shaheen",
-      description: "Multi-feature application with real-time data syncing and push notifications.",
+      description: "Real estate investment platform that helps organizations manage, organize, and simplify shareholder contributions in real-world property projects with transparent tracking and reporting.",
       image: "images/shaheen.png",
       category: "app",
-      tags: ["Flutter", "Firebase", "FCM"],
+      tags: ["Flutter", "Firebase", "REST API"],
       link: "",
     },
     {
       id: "default-9",
       title: "Let's Go",
-      description: "Travel companion app with trip planning and social features.",
+      description: "Accessibility app for people with special needs — helps them discover services, accessible places, and learn how to benefit from available resources and facilities in their area.",
       image: "images/letgo.png",
       category: "app",
       tags: ["Flutter", "REST API", "GetX"],
@@ -97,7 +97,7 @@
       description: "Consulting services website for government, private, and non-profit sectors with expert profiles, case studies, and client-consultant communication through contact forms and scheduling tools.",
       image: "images/moasherat.png",
       category: "web",
-      tags: ["Laravel", "PHP", "MySQL"],
+      tags: ["Laravel", "PHP", "MySQL", "Backend"],
       link: "https://moasherat.co/",
     },
     {
@@ -106,16 +106,16 @@
       description: "Professional law firm website with legal services display, attorney profiles, client testimonials, inquiry forms, and appointment scheduling. Clean, responsive interface across all devices.",
       image: "images/Untitled design (4).png",
       category: "web",
-      tags: ["HTML/CSS", "JavaScript", "PHP"],
+      tags: ["HTML/CSS", "JavaScript", "PHP", "Backend"],
       link: "https://alamry.sa/",
     },
     {
       id: "default-12",
       title: "Maham Expo",
       description: "Integrated expo management ecosystem with 6 smart platforms (investor, merchant, sponsor portals), AI engine, Digital Twin, C4I command center, IoT crowd management, and ZATCA-compliant automation. Includes Flutter mobile app with CI/CD pipeline.",
-      image: "images/maham-expo.png",
+      image: "images/maham-expo.jpeg",
       category: "web",
-      tags: ["React", "Node.js", "Flutter", "AI", "AWS"],
+      tags: ["React", "Node.js", "Flutter", "AI", "Cloud"],
       link: "https://mahamexpo.sa/",
     },
     {
@@ -124,7 +124,7 @@
       description: "Digital marketing and creative agency platform specializing in event management, content creation, media coordination, 3D design services, and digital publishing for Saudi Arabian brands and organizations.",
       image: "images/trqem.png",
       category: "web",
-      tags: ["WordPress", "PHP", "JavaScript"],
+      tags: ["WordPress", "PHP", "JavaScript", "Backend"],
       link: "https://trqem.sa/",
     },
     {
@@ -133,7 +133,7 @@
       description: "E-learning platform for Nahj Al-Maarifa Training Institute offering qualifying and development courses. Features interactive learning methods, expert-designed training programs, and innovative educational content across multiple fields.",
       image: "images/nahj.png",
       category: "web",
-      tags: ["Laravel", "PHP", "MySQL"],
+      tags: ["Laravel", "PHP", "MySQL", "Cloud"],
       link: "https://nahj.com.sa/",
     },
     {
@@ -142,7 +142,7 @@
       description: "Award-winning creative media platform for Hajj & Umrah content. Produces podcasts, videos, and visual stories about pilgrim services. Won 3rd place in Mediathon Hajj & Umrah 2024.",
       image: "images/khandamh.png",
       category: "web",
-      tags: ["WordPress", "PHP", "Media"],
+      tags: ["WordPress", "PHP", "Media", "Backend"],
       link: "https://khandamh.com/",
     },
     {
@@ -151,7 +151,7 @@
       description: "Enterprise operations company website for infrastructure development, crowd management, facility operations, event management, and digital transformation. Serves SAR, King Abdulaziz University, Public Security, and Vision 2030 projects.",
       image: "images/zimam.png",
       category: "web",
-      tags: ["Laravel", "PHP", "MySQL"],
+      tags: ["Laravel", "PHP", "MySQL", "Backend"],
       link: "https://zimam.sa/",
     },
   ];

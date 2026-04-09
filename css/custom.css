@@ -508,8 +508,8 @@ img {
 }
 
 .profile-img {
-  width: 340px;
-  height: 340px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
@@ -718,7 +718,7 @@ img {
 
 .about-img-wrapper img {
   width: 100%;
-  height: 450px;
+  height: 380px;
   object-fit: cover;
   border-radius: var(--radius-lg);
   filter: grayscale(20%);
@@ -946,7 +946,7 @@ img {
 /* Soft Skills */
 .soft-skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
@@ -969,6 +969,26 @@ img {
   background: rgba(255, 255, 255, 0.1);
 }
 
+.soft-skill-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-1);
+  border-radius: 50%;
+  font-size: 1.6rem;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(175, 54, 137, 0.3);
+  transition: var(--transition);
+}
+
+.soft-skill-card:hover .soft-skill-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 35px rgba(175, 54, 137, 0.5);
+}
+
 .soft-skill-card h4 {
   font-size: 1rem;
   font-weight: 700;
@@ -979,6 +999,7 @@ img {
 .soft-skill-card p {
   font-size: 0.85rem;
   color: var(--text-secondary);
+  line-height: 1.5;
 }
 
 /* Skill Ring */
