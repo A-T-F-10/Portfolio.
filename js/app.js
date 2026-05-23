@@ -1,295 +1,116 @@
 /* ============================================
-   ATIF ADEM — PORTFOLIO APP.JS
-   Interactive Features & Project Management
+   ATEF ADEM — PORTFOLIO
+   Clean, modern JS — no bloat
    ============================================ */
-
 (function () {
   "use strict";
 
   // =========================
-  // Default Projects Data
+  // Projects Data
   // =========================
-  const defaultProjects = [
+  const projects = [
     {
-      id: "default-1",
-      title: "المركز العام للنقل",
-      description: "Bus and transportation compliance monitoring system — similar to Imtithal but for buses and gathering points. Tracks fleet operations, station compliance, and route management for Hajj transportation services.",
-      image: "images/2.png",
-      category: "app",
-      tags: ["Flutter", "Firebase", "Maps API"],
-      link: "",
-    },
-    {
-      id: "default-2",
-      title: "Sahemtrv (سهم)",
-      description: "Travel and tourism booking platform with trip searching, accommodation booking, and package deals. Designed for seamless customer experience with secure payment processing and optimized performance.",
-      image: "images/3.png",
-      category: "web",
-      tags: ["Laravel", "PHP", "MySQL", "Backend"],
-      link: "",
-    },
-    {
-      id: "default-3",
+      id: "p1",
       title: "Imtithal (امتثال)",
-      description: "Hajj compliance monitoring system for service companies (versions 46 & 47) under the Ministry of Hajj and Umrah. Processes 3.7M+ data entries, 300K+ evaluations, and 63K+ registered users using smart digital solutions.",
+      description: "Hajj compliance monitoring system for the Ministry of Hajj and Umrah. Processes 3.7M+ data entries, manages 300K+ evaluations, and serves 63K+ registered users. Built end-to-end with smart digital monitoring, automated reporting, and real-time dashboards.",
       image: "images/imtithal.png",
       category: "web",
-      tags: ["Laravel", "Flutter", "REST API", "Cloud"],
+      tags: ["Laravel", "Flutter", "REST API", "Cloud", "PostgreSQL"],
       link: "https://www.imtithal47.com/",
     },
     {
-      id: "default-4",
-      title: "DBsaloni",
-      description: "Salon management app for booking and searching salons with appointment scheduling, salon listings, and user profiles. Intuitive UI for seamless bookings across Android and iOS.",
-      image: "images/DBsalonis.png",
-      category: "app",
-      tags: ["Flutter", "Dart", "Firebase"],
-      link: "",
-    },
-    {
-      id: "default-5",
-      title: "MeQRCode",
-      description: "Cross-platform QR code generator and scanner app with custom QR creation features, user-friendly interface, and secure data handling. Delivered bug-free within timeline.",
-      image: "images/qrcode.png",
-      category: "app",
-      tags: ["Flutter", "Dart", "Camera"],
-      link: "",
-    },
-    {
-      id: "default-6",
-      title: "ZHAB",
-      description: "RFID-based application to scan and track pilgrims' luggage with real-time scanning, data retrieval, and a user-friendly interface designed for non-technical staff. Secure handling across Android and iOS.",
-      image: "images/zhabs.png",
-      category: "app",
-      tags: ["Flutter", "RFID", "Dart"],
-      link: "",
-    },
-    {
-      id: "default-7",
-      title: "Digital Guide",
-      description: "App for searching and connecting with charitable organizations. Browse charity profiles, contact details, and services offered with smooth navigation across Android and iOS.",
-      image: "images/Untitled design (6).png",
-      category: "app",
-      tags: ["Flutter", "REST API", "Dart"],
-      link: "",
-    },
-    {
-      id: "default-8",
-      title: "Shaheen",
-      description: "Real estate investment platform that helps organizations manage, organize, and simplify shareholder contributions in real-world property projects with transparent tracking and reporting.",
-      image: "images/shaheen.png",
-      category: "app",
-      tags: ["Flutter", "Firebase", "REST API"],
-      link: "",
-    },
-    {
-      id: "default-9",
-      title: "Let's Go",
-      description: "Accessibility app for people with special needs — helps them discover services, accessible places, and learn how to benefit from available resources and facilities in their area.",
-      image: "images/letgo.png",
-      category: "app",
-      tags: ["Flutter", "REST API", "GetX"],
-      link: "",
-    },
-    {
-      id: "default-10",
-      title: "Moasherat",
-      description: "Consulting services website for government, private, and non-profit sectors with expert profiles, case studies, and client-consultant communication through contact forms and scheduling tools.",
-      image: "images/moasherat.png",
-      category: "web",
-      tags: ["Laravel", "PHP", "MySQL", "Backend"],
-      link: "https://moasherat.co/",
-    },
-    {
-      id: "default-11",
-      title: "Alamry Law Firm",
-      description: "Professional law firm website with legal services display, attorney profiles, client testimonials, inquiry forms, and appointment scheduling. Clean, responsive interface across all devices.",
-      image: "images/Untitled design (4).png",
-      category: "web",
-      tags: ["HTML/CSS", "JavaScript", "PHP", "Backend"],
-      link: "https://alamry.sa/",
-    },
-    {
-      id: "default-12",
+      id: "p2",
       title: "Maham Expo",
-      description: "Integrated expo management ecosystem with 6 smart platforms (investor, merchant, sponsor portals), AI engine, Digital Twin, C4I command center, IoT crowd management, and ZATCA-compliant automation. Includes Flutter mobile app with CI/CD pipeline.",
+      description: "Integrated expo management ecosystem with 6 smart platforms (investor, merchant, sponsor portals), AI recommendation engine, Digital Twin visualization, C4I command center, IoT crowd management, and ZATCA-compliant automation. Includes Flutter mobile app with CI/CD pipeline.",
       image: "images/maham-expo.jpeg",
       category: "web",
-      tags: ["React", "Node.js", "Flutter", "AI", "Cloud"],
+      tags: ["React", "Node.js", "Flutter", "AI", "Cloud", "CI/CD"],
       link: "https://mahamexpo.sa/",
     },
     {
-      id: "default-13",
-      title: "Trqem (ترقيم)",
-      description: "Digital marketing and creative agency platform specializing in event management, content creation, media coordination, 3D design services, and digital publishing for Saudi Arabian brands and organizations.",
-      image: "images/trqem.png",
-      category: "web",
-      tags: ["WordPress", "PHP", "JavaScript", "Backend"],
-      link: "https://trqem.sa/",
+      id: "p3",
+      title: "المركز العام للنقل",
+      description: "Transportation compliance monitoring system for buses and gathering points during Hajj. Tracks fleet operations, station compliance, route management, and real-time GPS monitoring for pilgrimage transportation services.",
+      image: "images/2.png",
+      category: "app",
+      tags: ["Flutter", "Firebase", "Maps API", "Real-time"],
     },
     {
-      id: "default-14",
+      id: "p4",
+      title: "Sahemtrv (سهم)",
+      description: "Travel and tourism booking platform with trip searching, accommodation booking, and package deals. Features secure payment processing, optimized search algorithms, and seamless booking flow.",
+      image: "images/3.png",
+      category: "web",
+      tags: ["Laravel", "PHP", "MySQL", "REST API"],
+    },
+    {
+      id: "p5",
+      title: "DBsaloni",
+      description: "Salon management platform for booking appointments, discovering salons, and managing profiles. Cross-platform Flutter app with real-time availability, push notifications, and integrated payment.",
+      image: "images/DBsalonis.png",
+      category: "app",
+      tags: ["Flutter", "Dart", "Firebase", "Push Notifications"],
+    },
+    {
+      id: "p6",
+      title: "ZHAB",
+      description: "RFID-based application for scanning and tracking pilgrims' luggage. Real-time scanning, instant data retrieval, and user-friendly interface designed for non-technical staff. Handles thousands of scans daily.",
+      image: "images/zhabs.png",
+      category: "app",
+      tags: ["Flutter", "RFID", "Dart", "Hardware Integration"],
+    },
+    {
+      id: "p7",
+      title: "Shaheen",
+      description: "Real estate investment platform helping organizations manage shareholder contributions in property projects. Features transparent tracking, dividend reporting, and investor dashboards.",
+      image: "images/shaheen.png",
+      category: "app",
+      tags: ["Flutter", "Firebase", "REST API", "Financial"],
+    },
+    {
+      id: "p8",
+      title: "Let's Go",
+      description: "Accessibility app for people with special needs — helps discover services, accessible places, and available resources. Built with inclusive UX principles and location-based discovery.",
+      image: "images/letgo.png",
+      category: "app",
+      tags: ["Flutter", "REST API", "GetX", "Accessibility"],
+    },
+    {
+      id: "p9",
+      title: "Zimam (زمام القوة)",
+      description: "Enterprise operations company platform for infrastructure development, crowd management, facility operations, and digital transformation. Serves Vision 2030 projects and government entities.",
+      image: "images/zimam.png",
+      category: "web",
+      tags: ["Laravel", "PHP", "MySQL", "Enterprise"],
+      link: "https://zimam.sa/",
+    },
+    {
+      id: "p10",
+      title: "Moasherat",
+      description: "Consulting services platform for government, private, and non-profit sectors. Expert profiles, case studies, and client-consultant communication tools.",
+      image: "images/moasherat.png",
+      category: "web",
+      tags: ["Laravel", "PHP", "MySQL"],
+      link: "https://moasherat.co/",
+    },
+    {
+      id: "p11",
       title: "Nahj (نهج المعرفة)",
-      description: "E-learning platform for Nahj Al-Maarifa Training Institute offering qualifying and development courses. Features interactive learning methods, expert-designed training programs, and innovative educational content across multiple fields.",
+      description: "E-learning platform offering qualifying and development courses with interactive learning methods, expert-designed programs, and progress tracking.",
       image: "images/nahj.png",
       category: "web",
-      tags: ["Laravel", "PHP", "MySQL", "Cloud"],
+      tags: ["Laravel", "PHP", "MySQL", "LMS"],
       link: "https://nahj.com.sa/",
     },
     {
-      id: "default-15",
-      title: "Khandamh (خندمة)",
-      description: "Award-winning creative media platform for Hajj & Umrah content. Produces podcasts, videos, and visual stories about pilgrim services. Won 3rd place in Mediathon Hajj & Umrah 2024.",
-      image: "images/khandamh.png",
-      category: "web",
-      tags: ["WordPress", "PHP", "Media", "Backend"],
-      link: "https://khandamh.com/",
-    },
-    {
-      id: "default-16",
-      title: "Zimam (زمام القوة)",
-      description: "Enterprise operations company website for infrastructure development, crowd management, facility operations, event management, and digital transformation. Serves SAR, King Abdulaziz University, Public Security, and Vision 2030 projects.",
-      image: "images/zimam.png",
-      category: "web",
-      tags: ["Laravel", "PHP", "MySQL", "Backend"],
-      link: "https://zimam.sa/",
+      id: "p12",
+      title: "Digital Guide",
+      description: "App for searching and connecting with charitable organizations. Browse profiles, services, and contact details with smooth cross-platform navigation.",
+      image: "images/Untitled design (6).png",
+      category: "app",
+      tags: ["Flutter", "REST API", "Dart"],
     },
   ];
-
-  // =========================
-  // Particles Animation
-  // =========================
-  function initParticles() {
-    const canvas = document.getElementById("particles-canvas");
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    let particles = [];
-    let animationId;
-
-    function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
-    class Particle {
-      constructor() {
-        this.reset();
-      }
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = (Math.random() - 0.5) * 0.5;
-        this.opacity = Math.random() * 0.5 + 0.1;
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(175, 54, 137, ${this.opacity})`;
-        ctx.fill();
-      }
-    }
-
-    function init() {
-      particles = [];
-      const count = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
-      for (let i = 0; i < count; i++) {
-        particles.push(new Particle());
-      }
-    }
-
-    function connectParticles() {
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(175, 54, 137, ${0.08 * (1 - dist / 150)})`;
-            ctx.lineWidth = 0.5;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
-        }
-      }
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p) => {
-        p.update();
-        p.draw();
-      });
-      connectParticles();
-      animationId = requestAnimationFrame(animate);
-    }
-
-    resize();
-    init();
-    animate();
-
-    window.addEventListener("resize", () => {
-      resize();
-      init();
-    });
-  }
-
-  // =========================
-  // Typing Animation
-  // =========================
-  function initTypingAnimation() {
-    const el = document.getElementById("typed-text");
-    if (!el) return;
-
-    const strings = [
-      "Software Engineer",
-      "Flutter Developer",
-      "Backend Developer",
-      "DevOps Engineer",
-      "Cloud Architect",
-    ];
-
-    let stringIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 80;
-
-    function type() {
-      const current = strings[stringIndex];
-
-      if (isDeleting) {
-        el.textContent = current.substring(0, charIndex - 1);
-        charIndex--;
-        typingSpeed = 40;
-      } else {
-        el.textContent = current.substring(0, charIndex + 1);
-        charIndex++;
-        typingSpeed = 80;
-      }
-
-      if (!isDeleting && charIndex === current.length) {
-        typingSpeed = 2000;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        stringIndex = (stringIndex + 1) % strings.length;
-        typingSpeed = 500;
-      }
-
-      setTimeout(type, typingSpeed);
-    }
-
-    setTimeout(type, 1000);
-  }
 
   // =========================
   // Navigation
@@ -300,16 +121,10 @@
     const navMenu = document.getElementById("nav-menu");
     const navLinks = document.querySelectorAll(".nav-link");
 
-    // Scroll effect
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
     });
 
-    // Mobile toggle
     if (navToggle) {
       navToggle.addEventListener("click", () => {
         navToggle.classList.toggle("active");
@@ -317,7 +132,6 @@
       });
     }
 
-    // Close on link click
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
         navToggle.classList.remove("active");
@@ -329,29 +143,20 @@
     const sections = document.querySelectorAll("section[id]");
     window.addEventListener("scroll", () => {
       let current = "";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute("id");
-        }
+      sections.forEach((s) => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
       });
-
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) {
-          link.classList.add("active");
-        }
+      navLinks.forEach((l) => {
+        l.classList.toggle("active", l.getAttribute("href") === `#${current}`);
       });
     });
 
     // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener("click", (e) => {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+        const t = document.querySelector(a.getAttribute("href"));
+        if (t) t.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
   }
@@ -362,60 +167,42 @@
   function initBackToTop() {
     const btn = document.getElementById("back-to-top");
     if (!btn) return;
-
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 500) {
-        btn.classList.add("visible");
-      } else {
-        btn.classList.remove("visible");
-      }
+      btn.classList.toggle("visible", window.scrollY > 500);
     });
-
-    btn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   }
 
   // =========================
   // Scroll Animations
   // =========================
   function initScrollAnimations() {
-    const elements = document.querySelectorAll(".animate-on-scroll");
+    const els = document.querySelectorAll(".animate-on-scroll, .section-header, .about-content, .about-sidebar, .skill-tier, .building-card, .contact-info, .contact-form-wrapper");
+    els.forEach((el) => el.classList.add("animate-on-scroll"));
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animated");
-          }
-        });
-      },
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("animated"); }),
       { threshold: 0.1 }
     );
-
-    elements.forEach((el) => observer.observe(el));
+    els.forEach((el) => observer.observe(el));
   }
 
   // =========================
-  // Counter Animation
+  // Counters
   // =========================
   function initCounters() {
-    const counters = document.querySelectorAll(".stat-number");
-
+    const counters = document.querySelectorAll(".metric-number");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !entry.target.classList.contains("counted")) {
             entry.target.classList.add("counted");
-            const target = parseInt(entry.target.getAttribute("data-count"));
+            const target = parseInt(entry.target.dataset.count);
             let current = 0;
-            const increment = target / 60;
+            const step = target / 40;
             const timer = setInterval(() => {
-              current += increment;
-              if (current >= target) {
-                current = target;
-                clearInterval(timer);
-              }
+              current += step;
+              if (current >= target) { current = target; clearInterval(timer); }
               entry.target.textContent = Math.floor(current) + "+";
             }, 30);
           }
@@ -423,102 +210,76 @@
       },
       { threshold: 0.5 }
     );
-
-    counters.forEach((counter) => observer.observe(counter));
+    counters.forEach((c) => observer.observe(c));
   }
 
   // =========================
-  // Projects Manager
+  // Projects
   // =========================
-  function getProjects() {
-    const stored = localStorage.getItem("portfolio_projects");
-    const customProjects = stored ? JSON.parse(stored) : [];
-    return [...defaultProjects, ...customProjects];
-  }
-
   function renderProjects(filter = "all") {
     const grid = document.getElementById("projects-grid");
     if (!grid) return;
 
-    const projects = getProjects();
     const filtered = filter === "all" ? projects : projects.filter((p) => p.category === filter);
 
-    grid.innerHTML = filtered
-      .map(
-        (project, index) => `
-      <div class="project-card animate-on-scroll animated" data-category="${project.category}">
+    grid.innerHTML = filtered.map((p) => `
+      <div class="project-card" data-category="${p.category}">
         <div class="project-card-image-wrapper">
-          <img src="${project.image}" alt="${project.title}" class="project-card-image" 
-               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzFhMWEyNSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iSW50ZXIsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZjNjNmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPvCfk4EgUHJvamVjdDwvdGV4dD48L3N2Zz4='">
+          <img src="${p.image}" alt="${p.title}" class="project-card-image" loading="lazy"
+               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBmMGYxMiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiIgZmlsbD0iIzUyNTI1YiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPvCfk4EgUHJvamVjdDwvdGV4dD48L3N2Zz4='">
           <div class="project-card-overlay">
             <div class="project-overlay-links">
-              ${project.link ? `<a href="${project.link}" target="_blank" title="Visit Site"><i class="fas fa-external-link-alt"></i></a>` : ""}
-              <a href="#" title="View Details" onclick="event.preventDefault(); openProjectModal('${project.id}')"><i class="fas fa-info-circle"></i></a>
+              ${p.link ? `<a href="${p.link}" target="_blank" title="Visit"><i class="fas fa-external-link-alt"></i></a>` : ""}
+              <a href="#" title="Details" onclick="event.preventDefault(); openProjectModal('${p.id}')"><i class="fas fa-info-circle"></i></a>
             </div>
           </div>
         </div>
         <div class="project-card-content">
-          <h3>${project.title}</h3>
-          <p>${project.description || ""}</p>
-          <div class="project-tags">
-            ${(project.tags || []).map((tag) => `<span class="project-tag">${tag}</span>`).join("")}
-          </div>
+          <h3>${p.title}</h3>
+          <p>${p.description}</p>
+          <div class="project-tags">${p.tags.map((t) => `<span class="project-tag">${t}</span>`).join("")}</div>
         </div>
       </div>
-    `
-      )
-      .join("");
+    `).join("");
   }
 
   function initProjectFilters() {
-    const filterBtns = document.querySelectorAll(".filter-btn");
-    filterBtns.forEach((btn) => {
+    document.querySelectorAll(".filter-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        filterBtns.forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
-        renderProjects(btn.getAttribute("data-filter"));
+        renderProjects(btn.dataset.filter);
       });
     });
   }
 
   // =========================
-  // Project Detail Modal
+  // Project Modal
   // =========================
-  window.openProjectModal = function(projectId) {
-    const projects = getProjects();
-    const project = projects.find(p => p.id === projectId);
-    if (!project) return;
-
-    document.getElementById('project-modal-img').src = project.image || '';
-    document.getElementById('project-modal-img').alt = project.title;
-    document.getElementById('project-modal-title').textContent = project.title;
-    document.getElementById('project-modal-desc').textContent = project.description || 'No description available.';
-    document.getElementById('project-modal-category').textContent = project.category;
-    document.getElementById('project-modal-tags').innerHTML = (project.tags || []).map(t => `<span class="project-tag">${t}</span>`).join('');
-
-    const actionsEl = document.getElementById('project-modal-actions');
-    actionsEl.innerHTML = '';
-    if (project.link) {
-      actionsEl.innerHTML += `<a href="${project.link}" target="_blank" class="btn-primary"><i class="fas fa-external-link-alt"></i> Visit Site</a>`;
-    }
-    actionsEl.innerHTML += `<button class="btn-outline" onclick="closeProjectModal()"><i class="fas fa-times"></i> Close</button>`;
-
-    document.getElementById('project-modal-overlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
+  window.openProjectModal = function (id) {
+    const p = projects.find((x) => x.id === id);
+    if (!p) return;
+    document.getElementById("project-modal-img").src = p.image || "";
+    document.getElementById("project-modal-img").alt = p.title;
+    document.getElementById("project-modal-title").textContent = p.title;
+    document.getElementById("project-modal-desc").textContent = p.description;
+    document.getElementById("project-modal-category").textContent = p.category;
+    document.getElementById("project-modal-tags").innerHTML = p.tags.map((t) => `<span class="project-tag">${t}</span>`).join("");
+    const actions = document.getElementById("project-modal-actions");
+    actions.innerHTML = "";
+    if (p.link) actions.innerHTML += `<a href="${p.link}" target="_blank" class="btn-primary"><i class="fas fa-external-link-alt"></i> Visit</a>`;
+    actions.innerHTML += `<button class="btn-outline" onclick="closeProjectModal()"><i class="fas fa-times"></i> Close</button>`;
+    document.getElementById("project-modal-overlay").classList.add("active");
+    document.body.style.overflow = "hidden";
   };
 
-  window.closeProjectModal = function() {
-    document.getElementById('project-modal-overlay').classList.remove('active');
-    document.body.style.overflow = '';
+  window.closeProjectModal = function () {
+    document.getElementById("project-modal-overlay").classList.remove("active");
+    document.body.style.overflow = "";
   };
 
-  // Close modal on overlay click & Escape key
-  document.addEventListener('click', function(e) {
-    if (e.target.id === 'project-modal-overlay') closeProjectModal();
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeProjectModal();
-  });
+  document.addEventListener("click", (e) => { if (e.target.id === "project-modal-overlay") closeProjectModal(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeProjectModal(); });
 
   // =========================
   // Contact Form
@@ -530,62 +291,39 @@
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const btn = form.querySelector("button[type='submit']");
-      const originalText = btn.innerHTML;
+      const original = btn.innerHTML;
+      const data = Object.fromEntries(new FormData(form));
 
-      const name = form.querySelector("#name").value;
-      const email = form.querySelector("#email").value;
-      const subject = form.querySelector("#subject").value;
-      const message = form.querySelector("#message").value;
-
-      // Show loading state
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       btn.disabled = true;
 
-      let sent = false;
-
       try {
-        const response = await fetch("/api/send-email", {
+        const res = await fetch("/api/send-email", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, subject, message }),
+          body: JSON.stringify(data),
         });
-
-        if (response.ok) {
-          const data = await response.json();
-          sent = true;
-          btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-          btn.style.background = "linear-gradient(135deg, #28a745, #20c997)";
+        if (res.ok) {
+          btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+          btn.style.background = "linear-gradient(135deg, #22c55e, #16a34a)";
           form.reset();
-        } else {
-          throw new Error("API not available");
-        }
-      } catch (error) {
-        // Fallback to mailto
-        console.warn("API unavailable, using mailto fallback");
-        const mailtoLink = `mailto:a.addam710@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-          `Name: ${name}\nEmail: ${email}\n\n${message}`
-        )}`;
-        window.location.href = mailtoLink;
-        sent = true;
-        btn.innerHTML = '<i class="fas fa-check"></i> Opening Email Client...';
-        btn.style.background = "linear-gradient(135deg, #28a745, #20c997)";
+        } else throw new Error();
+      } catch {
+        const mailto = `mailto:a.addam710@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`)}`;
+        window.location.href = mailto;
+        btn.innerHTML = '<i class="fas fa-check"></i> Opening email...';
+        btn.style.background = "linear-gradient(135deg, #22c55e, #16a34a)";
         form.reset();
       }
 
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.style.background = "";
-        btn.disabled = false;
-      }, 3000);
+      setTimeout(() => { btn.innerHTML = original; btn.style.background = ""; btn.disabled = false; }, 3000);
     });
   }
 
   // =========================
-  // Initialize Everything
+  // Init
   // =========================
   document.addEventListener("DOMContentLoaded", () => {
-    initParticles();
-    initTypingAnimation();
     initNavigation();
     initBackToTop();
     initScrollAnimations();

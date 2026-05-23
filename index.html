@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Atef Adem — Software Engineer</title>
+	<title>Atif Adem — Software Engineer | Flutter, Backend & Cloud</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Software Engineer specializing in Flutter, Backend, DevOps & Cloud Engineering">
-	
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+	<meta name="description" content="Software Engineer building scalable mobile apps, backend systems, and cloud infrastructure. Specialized in Flutter, REST APIs, and production-grade platforms.">
+	<meta name="keywords" content="Software Engineer, Flutter Developer, Backend Engineer, Cloud, Mobile Apps, Full Stack">
+	<meta name="author" content="Atif Adem">
+	<meta property="og:title" content="Atif Adem — Software Engineer">
+	<meta property="og:description" content="Building scalable digital products with Flutter, backend systems & cloud infrastructure.">
+	<meta property="og:type" content="website">
+	<meta name="theme-color" content="#09090b">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	<link rel="stylesheet" href="css/custom.css">
 </head>
 
 <body>
-
-	<!-- Particles Background -->
-	<canvas id="particles-canvas"></canvas>
+	<div class="noise" aria-hidden="true"></div>
 
 	<!-- Navigation -->
-	<nav class="navbar" id="navbar">
+	<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
 		<div class="nav-container">
-			<a href="#" class="nav-logo">
-				<img src="images/AtiffLogo.png" alt="Atif Logo" class="logo-img">
+			<a href="#" class="nav-logo" aria-label="Home">
+				<img src="images/AtiffLogo.png" alt="Atif Adem" class="logo-img">
 			</a>
-			<button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+			<button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
 				<span></span><span></span><span></span>
 			</button>
 			<ul class="nav-menu" id="nav-menu">
@@ -30,8 +35,7 @@
 				<li><a href="#about" class="nav-link">About</a></li>
 				<li><a href="#skills" class="nav-link">Skills</a></li>
 				<li><a href="#projects" class="nav-link">Projects</a></li>
-				<li><a href="#contact" class="nav-link">Contact</a></li>
-				<li><a href="dashboard.html" class="nav-link nav-cta"><i class="fas fa-cog"></i> Dashboard</a></li>
+				<li><a href="#contact" class="nav-link nav-cta">Let's Talk</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -42,397 +46,297 @@
 			<div class="hero-content">
 				<div class="hero-badge">
 					<span class="badge-dot"></span>
-					Available for hire
+					Open to opportunities
 				</div>
 				<h1 class="hero-title">
-					Hi, I'm <span class="gradient-text">Atef Adem</span>
+					Building scalable products<br>
+					with <span class="gradient-text">Flutter & backend systems</span>
 				</h1>
-				<h2 class="hero-subtitle">
-					<span class="typed-prefix">I'm a </span>
-					<span class="typed-text" id="typed-text"></span>
-					<span class="typed-cursor">|</span>
-				</h2>
 				<p class="hero-description">
-					Building impactful digital solutions — from enterprise platforms processing millions of records 
-					to cross-platform mobile apps serving thousands of users across Saudi Arabia.
+					Software Engineer focused on shipping production-grade mobile apps, 
+					backend APIs, and cloud-deployed platforms. I've built systems processing 
+					millions of records and apps serving thousands of users.
 				</p>
 				<div class="hero-buttons">
 					<a href="#projects" class="btn-primary">
-						<i class="fas fa-rocket"></i> View My Work
+						<i class="fas fa-folder-open"></i> View Projects
 					</a>
 					<a href="#contact" class="btn-outline">
 						<i class="fas fa-paper-plane"></i> Get in Touch
 					</a>
+					<a href="Atif-Adem.pdf" download class="btn-ghost" aria-label="Download Resume">
+						<i class="fas fa-download"></i> Resume
+					</a>
 				</div>
-				<div class="hero-social">
-					<a href="https://github.com/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-					<a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-					<a href="https://wa.me/966541249651" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+				<div class="hero-links">
+					<a href="https://github.com/A-T-F-10" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+					<a href="https://www.linkedin.com/in/atif-mohamed-679768243/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
 					<a href="mailto:a.addam710@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
 				</div>
 			</div>
-			<div class="hero-image">
-				<div class="image-wrapper">
-					<div class="image-glow"></div>
-					<img src="images/image.jpeg" alt="Atef Adem" class="profile-img">
-					<div class="floating-card card-1">
-						<i class="fab fa-flutter"></i>
-						<span>Flutter</span>
+			<div class="hero-visual">
+				<div class="hero-card">
+					<div class="hero-card-header">
+						<span class="dot red"></span>
+						<span class="dot yellow"></span>
+						<span class="dot green"></span>
+						<span class="hero-card-file">engineer.ts</span>
 					</div>
-					<div class="floating-card card-2">
-						<i class="fab fa-google"></i>
-						<span>GCP</span>
-					</div>
-					<div class="floating-card card-3">
-						<i class="fab fa-docker"></i>
-						<span>DevOps</span>
-					</div>
-					<div class="floating-card card-5">
-						<i class="fas fa-code-branch"></i>
-						<span>CI/CD</span>
-					</div>
-					<div class="floating-card card-4">
-						<i class="fas fa-server"></i>
-						<span>Backend</span>
+					<div class="hero-card-body">
+						<pre><code><span class="ck">const</span> <span class="cv">engineer</span> = {
+  <span class="cp">name</span>: <span class="cs">"Atif Adem"</span>,
+  <span class="cp">role</span>: <span class="cs">"Software Engineer"</span>,
+  <span class="cp">focus</span>: [<span class="cs">"Flutter"</span>, <span class="cs">"Backend"</span>, <span class="cs">"Cloud"</span>],
+  <span class="cp">shipped</span>: <span class="cs">"production systems"</span>,
+  <span class="cp">location</span>: <span class="cs">"Saudi Arabia"</span>,
+  <span class="cp">available</span>: <span class="cb">true</span>
+};</code></pre>
 					</div>
 				</div>
-				<div class="floating-cards-mobile">
-					<div class="floating-card-mobile"><i class="fab fa-flutter"></i><span>Flutter</span></div>
-					<div class="floating-card-mobile"><i class="fab fa-google"></i><span>GCP</span></div>
-					<div class="floating-card-mobile"><i class="fab fa-docker"></i><span>DevOps</span></div>
-					<div class="floating-card-mobile"><i class="fas fa-code-branch"></i><span>CI/CD</span></div>
-					<div class="floating-card-mobile"><i class="fas fa-server"></i><span>Backend</span></div>
-				</div>
 			</div>
-		</div>
-		<div class="scroll-indicator">
-			<div class="mouse">
-				<div class="mouse-wheel"></div>
-			</div>
-			<span>Scroll Down</span>
 		</div>
 	</section>
 
-	<!-- Stats Section -->
-	<section class="stats-section">
+	<!-- Metrics -->
+	<section class="metrics-section" aria-label="Key metrics">
 		<div class="container">
-			<div class="stats-grid">
-				<div class="stat-card animate-on-scroll">
-					<div class="stat-icon"><i class="fas fa-mobile-alt"></i></div>
-					<div class="stat-number" data-count="10">0</div>
-					<div class="stat-label">Mobile Apps</div>
+			<div class="metrics-grid">
+				<div class="metric-item">
+					<span class="metric-number" data-count="10">0</span>
+					<span class="metric-label">Mobile Apps Shipped</span>
 				</div>
-				<div class="stat-card animate-on-scroll">
-					<div class="stat-icon"><i class="fas fa-server"></i></div>
-					<div class="stat-number" data-count="15">0</div>
-					<div class="stat-label">Backend Systems</div>
+				<div class="metric-item">
+					<span class="metric-number" data-count="7">0</span>
+					<span class="metric-label">Backend Systems</span>
 				</div>
-				<div class="stat-card animate-on-scroll">
-					<div class="stat-icon"><i class="fas fa-globe"></i></div>
-					<div class="stat-number" data-count="12">0</div>
-					<div class="stat-label">Websites Built</div>
+				<div class="metric-item">
+					<span class="metric-number" data-count="3">0</span>
+					<span class="metric-label">Years Experience</span>
 				</div>
-				<div class="stat-card animate-on-scroll">
-					<div class="stat-icon"><i class="fas fa-cloud"></i></div>
-					<div class="stat-number" data-count="5">0</div>
-					<div class="stat-label">Cloud Projects</div>
+				<div class="metric-item">
+					<span class="metric-number" data-count="2">0</span>
+					<span class="metric-label">Cloud Deployments</span>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- About Section -->
-	<section id="about" class="about-section">
+	<section id="about" class="section about-section">
 		<div class="container">
-			<div class="section-header animate-on-scroll">
-				<span class="section-tag">&lt;about&gt;</span>
-				<h2 class="section-title">Know Me Better</h2>
-				<p class="section-subtitle">I don’t just write code — I build solutions that make a real difference</p>
+			<div class="section-header">
+				<span class="section-label">About</span>
+				<h2 class="section-title">Engineering products that solve real problems</h2>
 			</div>
 			<div class="about-grid">
-				<div class="about-image animate-on-scroll">
-					<div class="about-img-wrapper">
-						<img src="images/image.jpeg" alt="Atef Adem">
-						<div class="experience-badge">
-							<span class="exp-number">3+</span>
-							<span class="exp-text">Years<br>Experience</span>
-						</div>
-					</div>
-				</div>
-				<div class="about-content animate-on-scroll">
-					<h3>Turning Ideas into Scalable Digital Products</h3>
-					<p class="about-text">
-						Software Engineer with 3+ years of hands-on experience delivering enterprise-grade 
-						platforms and mobile applications. I’ve built systems that process millions of data 
-						entries for Hajj operations, developed integrated expo ecosystems with AI engines, 
-						and created cross-platform apps used by thousands. I thrive on turning complex 
-						business requirements into elegant, user-friendly solutions — whether it’s a 
-						Flutter app, a Laravel backend, or a full cloud-deployed platform.
+				<div class="about-content">
+					<p class="about-lead">
+						I'm a Software Engineer with 3+ years of hands-on experience delivering 
+						production-grade platforms and cross-platform mobile applications.
 					</p>
-					<div class="about-info-grid">
-						<div class="info-item">
-							<i class="fas fa-user"></i>
-							<div>
-								<span class="info-label">Name</span>
-								<span class="info-value">Atef Adem Mohammed Abaker</span>
-							</div>
+					<p class="about-text">
+						I've built enterprise systems that process millions of data entries for Hajj operations 
+						under the Saudi Ministry of Hajj and Umrah, developed integrated expo ecosystems 
+						with AI-powered engines, and created cross-platform apps used by thousands of users.
+					</p>
+					<p class="about-text">
+						My approach is product-focused: I care about architecture, performance, user experience, 
+						and shipping reliable software. Whether it's designing REST APIs, building Flutter apps 
+						with clean state management, or deploying to cloud infrastructure — I focus on 
+						making systems that work at scale.
+					</p>
+					<div class="about-values">
+						<div class="value-item">
+							<i class="fas fa-cube"></i>
+							<div><strong>Systems Thinking</strong><span>Architecture-first approach</span></div>
 						</div>
-						<div class="info-item">
-							<i class="fas fa-map-marker-alt"></i>
-							<div>
-								<span class="info-label">Location</span>
-								<span class="info-value">Mecca, Saudi Arabia</span>
-							</div>
+						<div class="value-item">
+							<i class="fas fa-bolt"></i>
+							<div><strong>Product Focus</strong><span>Ship features that solve problems</span></div>
 						</div>
-						<div class="info-item">
-							<i class="fas fa-envelope"></i>
-							<div>
-								<span class="info-label">Email</span>
-								<span class="info-value">a.addam710@gmail.com</span>
-							</div>
-						</div>
-						<div class="info-item">
-							<i class="fas fa-phone"></i>
-							<div>
-								<span class="info-label">Phone</span>
-								<span class="info-value">+966541249651</span>
-							</div>
+						<div class="value-item">
+							<i class="fas fa-layer-group"></i>
+							<div><strong>Full Stack</strong><span>Mobile to backend to deployment</span></div>
 						</div>
 					</div>
-					<div class="about-buttons">
-						<a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Hire Me</a>
-						<a href="#" class="btn-outline"><i class="fas fa-download"></i> Download CV</a>
+				</div>
+				<div class="about-sidebar">
+					<div class="detail-card">
+						<h4>Quick Info</h4>
+						<ul class="detail-list">
+							<li><span class="dk">Location</span><span class="dv">Mecca, Saudi Arabia</span></li>
+							<li><span class="dk">Email</span><span class="dv">a.addam710@gmail.com</span></li>
+							<li><span class="dk">Focus</span><span class="dv">Flutter, Backend, Cloud</span></li>
+							<li><span class="dk">Languages</span><span class="dv">Arabic, English</span></li>
+							<li><span class="dk">Status</span><span class="dv dv-green">Open to work</span></li>
+						</ul>
 					</div>
-				</div>
-			</div>
-			<div class="section-header animate-on-scroll" style="margin-top: 5rem;">
-				<span class="section-tag">&lt;interests&gt;</span>
-			</div>
-			<div class="interests-grid animate-on-scroll">
-				<div class="interest-item">
-					<div class="interest-icon"><i class="fas fa-headphones-alt"></i></div>
-					<span>Music</span>
-				</div>
-				<div class="interest-item">
-					<div class="interest-icon"><i class="fas fa-plane-departure"></i></div>
-					<span>Travel</span>
-				</div>
-				<div class="interest-item">
-					<div class="interest-icon"><i class="fas fa-film"></i></div>
-					<span>Movies</span>
-				</div>
-				<div class="interest-item">
-					<div class="interest-icon"><i class="fas fa-futbol"></i></div>
-					<span>Sports</span>
-				</div>
-				<div class="interest-item">
-					<div class="interest-icon"><i class="fas fa-code"></i></div>
-					<span>Coding</span>
-				</div>
-				<div class="interest-item">
-					<div class="interest-icon"><i class="fas fa-gamepad"></i></div>
-					<span>Gaming</span>
+					<div class="about-ctas">
+						<a href="#contact" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Hire Me</a>
+						<a href="Atif-Adem.pdf" download class="btn-outline btn-full"><i class="fas fa-download"></i> Download CV</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Skills Section -->
-	<section id="skills" class="skills-section">
+	<section id="skills" class="section skills-section">
 		<div class="container">
-			<div class="section-header animate-on-scroll">
-				<span class="section-tag">&lt;skills&gt;</span>
-				<h2 class="section-title">Technical Arsenal</h2>
-				<p class="section-subtitle">Technologies and tools I work with daily</p>
+			<div class="section-header">
+				<span class="section-label">Technical Skills</span>
+				<h2 class="section-title">Technologies I work with</h2>
+				<p class="section-subtitle">Organized by depth of experience — honest and transparent.</p>
 			</div>
 
-			<div class="skills-category animate-on-scroll">
-				<h3 class="category-title"><i class="fas fa-mobile-alt"></i> Flutter & Mobile</h3>
-				<div class="tech-grid">
-					<div class="tech-card"><i class="fab fa-flutter"></i><span>Flutter</span></div>
-					<div class="tech-card"><i class="fas fa-code"></i><span>Dart</span></div>
-					<div class="tech-card"><i class="fas fa-cubes"></i><span>Bloc / Riverpod</span></div>
-					<div class="tech-card"><i class="fas fa-fire"></i><span>Firebase</span></div>
-					<div class="tech-card"><i class="fas fa-paint-brush"></i><span>Material / Cupertino</span></div>
+			<div class="skills-tiers">
+				<div class="skill-tier">
+					<div class="tier-header">
+						<span class="tier-badge tier-core">Core Expertise</span>
+						<span class="tier-desc">Production experience, daily use</span>
+					</div>
+					<div class="tech-grid">
+						<div class="tech-chip"><i class="fab fa-flutter"></i> Flutter</div>
+						<div class="tech-chip"><i class="fas fa-code"></i> Dart</div>
+						<div class="tech-chip"><i class="fas fa-fire"></i> Firebase</div>
+						<div class="tech-chip"><i class="fas fa-plug"></i> REST APIs</div>
+						<div class="tech-chip"><i class="fab fa-php"></i> Laravel / PHP</div>
+						<div class="tech-chip"><i class="fas fa-cubes"></i> Bloc / Riverpod</div>
+						<div class="tech-chip"><i class="fas fa-database"></i> MySQL / PostgreSQL</div>
+						<div class="tech-chip"><i class="fab fa-git-alt"></i> Git</div>
+					</div>
 				</div>
-			</div>
 
-			<div class="skills-category animate-on-scroll">
-				<h3 class="category-title"><i class="fas fa-paint-brush"></i> Graphic & Web Design</h3>
-				<div class="tech-grid">
-					<div class="tech-card"><i class="fab fa-adobe"></i><span>Photoshop</span></div>
-					<div class="tech-card"><i class="fas fa-bezier-curve"></i><span>Illustrator</span></div>
-					<div class="tech-card"><i class="fas fa-palette"></i><span>Canva</span></div>
-					<div class="tech-card"><i class="fas fa-pencil-ruler"></i><span>UI/UX Design</span></div>
-					<div class="tech-card"><i class="fas fa-mobile-alt"></i><span>Responsive Design</span></div>
+				<div class="skill-tier">
+					<div class="tier-header">
+						<span class="tier-badge tier-working">Working Knowledge</span>
+						<span class="tier-desc">Project experience, confident usage</span>
+					</div>
+					<div class="tech-grid">
+						<div class="tech-chip"><i class="fab fa-docker"></i> Docker</div>
+						<div class="tech-chip"><i class="fab fa-node-js"></i> Node.js</div>
+						<div class="tech-chip"><i class="fab fa-python"></i> Python</div>
+						<div class="tech-chip"><i class="fas fa-terminal"></i> Linux / Shell</div>
+						<div class="tech-chip"><i class="fas fa-code-branch"></i> CI/CD</div>
+						<div class="tech-chip"><i class="fab fa-github"></i> GitHub Actions</div>
+						<div class="tech-chip"><i class="fab fa-google"></i> Google Cloud</div>
+						<div class="tech-chip"><i class="fas fa-bolt"></i> Supabase</div>
+						<div class="tech-chip"><i class="fas fa-cube"></i> Appwrite</div>
+					</div>
 				</div>
-			</div>
 
-			<div class="skills-category animate-on-scroll">
-				<h3 class="category-title"><i class="fas fa-server"></i> Backend & APIs</h3>
-				<div class="tech-grid">
-					<div class="tech-card"><i class="fab fa-node-js"></i><span>Node.js</span></div>
-					<div class="tech-card"><i class="fab fa-python"></i><span>Python</span></div>
-					<div class="tech-card"><i class="fab fa-php"></i><span>PHP / Laravel</span></div>
-					<div class="tech-card"><i class="fas fa-project-diagram"></i><span>REST / GraphQL</span></div>
-					<div class="tech-card"><i class="fas fa-database"></i><span>PostgreSQL / MongoDB</span></div>
-				</div>
-			</div>
-
-			<div class="skills-category animate-on-scroll">
-				<h3 class="category-title"><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
-				<div class="tech-grid">
-					<div class="tech-card"><i class="fab fa-docker"></i><span>Docker</span></div>
-					<div class="tech-card"><i class="fas fa-dharmachakra"></i><span>Kubernetes</span></div>
-					<div class="tech-card"><i class="fab fa-aws"></i><span>AWS</span></div>
-					<div class="tech-card"><i class="fab fa-google"></i><span>Google Cloud</span></div>
-					<div class="tech-card"><i class="fas fa-code-branch"></i><span>CI/CD Pipelines</span></div>
-					<div class="tech-card"><i class="fab fa-github"></i><span>GitHub Actions</span></div>
-					<div class="tech-card"><i class="fab fa-git-alt"></i><span>Git / GitHub</span></div>
-					<div class="tech-card"><i class="fas fa-terminal"></i><span>Linux / Shell</span></div>
-					<div class="tech-card"><i class="fas fa-scroll"></i><span>Scripting</span></div>
-				</div>
-			</div>
-
-			<div class="skills-category animate-on-scroll">
-				<h3 class="category-title"><i class="fas fa-server"></i> Infrastructure & Hosting</h3>
-				<div class="tech-grid">
-					<div class="tech-card"><i class="fas fa-hdd"></i><span>VPS</span></div>
-					<div class="tech-card"><i class="fas fa-train"></i><span>Railway</span></div>
-					<div class="tech-card"><i class="fas fa-cube"></i><span>Appwrite</span></div>
-					<div class="tech-card"><i class="fas fa-fire"></i><span>Firebase</span></div>
-					<div class="tech-card"><i class="fas fa-bolt"></i><span>Supabase</span></div>
-					<div class="tech-card"><i class="fas fa-snowflake"></i><span>Coolify</span></div>
-					<div class="tech-card"><i class="fas fa-triangle-exclamation"></i><span>Vercel</span></div>
-					<div class="tech-card"><i class="fas fa-network-wired"></i><span>Networking</span></div>
-					<div class="tech-card"><i class="fas fa-robot"></i><span>AI / ML</span></div>
-				</div>
-			</div>
-
-			<div class="section-header animate-on-scroll" style="margin-top: 4rem;">
-				<span class="section-tag">&lt;soft-skills&gt;</span>
-				<h2 class="section-title">Soft Skills</h2>
-			</div>
-			<div class="soft-skills-grid animate-on-scroll">
-				<div class="soft-skill-card">
-					<div class="soft-skill-icon"><i class="fas fa-lightbulb"></i></div>
-					<h4>Problem Solving</h4>
-					<p>Breaking down complex challenges into actionable solutions</p>
-				</div>
-				<div class="soft-skill-card">
-					<div class="soft-skill-icon"><i class="fas fa-palette"></i></div>
-					<h4>Creativity & Innovation</h4>
-					<p>Thinking outside the box to deliver unique digital experiences</p>
-				</div>
-				<div class="soft-skill-card">
-					<div class="soft-skill-icon"><i class="fas fa-comments"></i></div>
-					<h4>Communication</h4>
-					<p>Clear and effective communication with teams and stakeholders</p>
-				</div>
-				<div class="soft-skill-card">
-					<div class="soft-skill-icon"><i class="fas fa-users"></i></div>
-					<h4>Teamwork</h4>
-					<p>Collaborating effectively in cross-functional teams</p>
-				</div>
-				<div class="soft-skill-card">
-					<div class="soft-skill-icon"><i class="fas fa-clock"></i></div>
-					<h4>Time Management</h4>
-					<p>Delivering quality work on time with efficient prioritization</p>
-				</div>
-				<div class="soft-skill-card">
-					<div class="soft-skill-icon"><i class="fas fa-tasks"></i></div>
-					<h4>Project Management</h4>
-					<p>Planning, executing, and delivering projects from start to finish</p>
+				<div class="skill-tier">
+					<div class="tier-header">
+						<span class="tier-badge tier-exploring">Currently Exploring</span>
+						<span class="tier-desc">Learning & building with</span>
+					</div>
+					<div class="tech-grid">
+						<div class="tech-chip"><i class="fas fa-dharmachakra"></i> Kubernetes</div>
+						<div class="tech-chip"><i class="fab fa-aws"></i> AWS</div>
+						<div class="tech-chip"><i class="fas fa-robot"></i> AI Integrations</div>
+						<div class="tech-chip"><i class="fas fa-project-diagram"></i> GraphQL</div>
+						<div class="tech-chip"><i class="fas fa-network-wired"></i> Microservices</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Projects Section -->
-	<section id="projects" class="projects-section">
+	<section id="projects" class="section projects-section">
 		<div class="container">
-			<div class="section-header animate-on-scroll">
-				<span class="section-tag">&lt;projects&gt;</span>
-				<h2 class="section-title">My Projects</h2>
-				<p class="section-subtitle">A showcase of my recent work and contributions</p>
+			<div class="section-header">
+				<span class="section-label">Projects</span>
+				<h2 class="section-title">Selected engineering work</h2>
+				<p class="section-subtitle">Real systems built for real users — not tutorial projects.</p>
 			</div>
 
-			<div class="project-filters animate-on-scroll">
+			<div class="project-filters">
 				<button class="filter-btn active" data-filter="all">All</button>
 				<button class="filter-btn" data-filter="app">Mobile Apps</button>
-				<button class="filter-btn" data-filter="web">Websites</button>
+				<button class="filter-btn" data-filter="web">Web Platforms</button>
 				<button class="filter-btn" data-filter="backend">Backend</button>
-				<button class="filter-btn" data-filter="cloud">Cloud</button>
 			</div>
 
-			<div class="projects-grid" id="projects-grid">
-				<!-- Projects loaded dynamically from JS -->
+			<div class="projects-grid" id="projects-grid"></div>
+		</div>
+	</section>
+
+	<!-- Currently Building -->
+	<section class="section building-section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-label">What's Next</span>
+				<h2 class="section-title">What I'm currently exploring</h2>
+			</div>
+			<div class="building-grid">
+				<div class="building-card">
+					<div class="building-icon"><i class="fas fa-cloud"></i></div>
+					<h4>Cloud Infrastructure</h4>
+					<p>Deepening expertise in Kubernetes, AWS, and infrastructure-as-code for production deployments.</p>
+				</div>
+				<div class="building-card">
+					<div class="building-icon"><i class="fas fa-robot"></i></div>
+					<h4>AI-Powered Features</h4>
+					<p>Integrating LLM APIs and machine learning capabilities into mobile and web applications.</p>
+				</div>
+				<div class="building-card">
+					<div class="building-icon"><i class="fas fa-mobile-alt"></i></div>
+					<h4>Open Source Contributions</h4>
+					<p>Contributing reusable packages and architectural patterns to the Flutter community.</p>
+				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Contact Section -->
-	<section id="contact" class="contact-section">
+	<section id="contact" class="section contact-section">
 		<div class="container">
-			<div class="section-header animate-on-scroll">
-				<span class="section-tag">&lt;contact&gt;</span>
-				<h2 class="section-title">Let's Work Together</h2>
-				<p class="section-subtitle">Have a project in mind? Let's make it happen!</p>
+			<div class="section-header">
+				<span class="section-label">Contact</span>
+				<h2 class="section-title">Let's build something together</h2>
+				<p class="section-subtitle">Open to full-time roles, contract work, and collaboration.</p>
 			</div>
 
 			<div class="contact-grid">
-				<div class="contact-info animate-on-scroll">
+				<div class="contact-info">
 					<div class="contact-card">
-						<div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-						<h4>Location</h4>
-						<p>Mecca, Saudi Arabia</p>
+						<i class="fas fa-envelope"></i>
+						<div><span class="contact-label">Email</span><a href="mailto:a.addam710@gmail.com">a.addam710@gmail.com</a></div>
 					</div>
 					<div class="contact-card">
-						<div class="contact-icon"><i class="fas fa-envelope"></i></div>
-						<h4>Email</h4>
-						<p><a href="mailto:a.addam710@gmail.com">a.addam710@gmail.com</a></p>
+						<i class="fab fa-whatsapp"></i>
+						<div><span class="contact-label">WhatsApp</span><a href="https://wa.me/966541249651" target="_blank">+966 541 249 651</a></div>
 					</div>
 					<div class="contact-card">
-						<div class="contact-icon"><i class="fas fa-phone"></i></div>
-						<h4>Phone</h4>
-						<p><a href="tel:+966541249651">+966 541 249 651</a></p>
+						<i class="fas fa-map-marker-alt"></i>
+						<div><span class="contact-label">Location</span><span>Mecca, Saudi Arabia</span></div>
 					</div>
-					<div class="contact-card">
-						<div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-						<h4>WhatsApp</h4>
-						<p><a href="https://wa.me/966541249651" target="_blank">Message me</a></p>
-					</div>
-
-					<div class="contact-social">
-						<h4>Find me on</h4>
-						<div class="social-links">
-							<a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-							<a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-							<a href="https://twitter.com/" target="_blank"><i class="fab fa-x-twitter"></i></a>
-							<a href="https://wa.me/966541249651" target="_blank"><i class="fab fa-whatsapp"></i></a>
-						</div>
+					<div class="contact-links-row">
+						<a href="https://github.com/A-T-F-10" target="_blank" rel="noopener" class="contact-link-btn"><i class="fab fa-github"></i> GitHub</a>
+						<a href="https://www.linkedin.com/in/atif-mohamed-679768243/" target="_blank" rel="noopener" class="contact-link-btn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
 					</div>
 				</div>
 
-				<div class="contact-form-wrapper animate-on-scroll">
+				<div class="contact-form-wrapper">
 					<form id="contact-form" class="contact-form">
 						<div class="form-row">
 							<div class="form-group">
-								<label for="name">Your Name</label>
-								<input type="text" id="name" name="name" required placeholder="John Doe">
+								<label for="name">Name</label>
+								<input type="text" id="name" name="name" required placeholder="Your name">
 							</div>
 							<div class="form-group">
-								<label for="email">Your Email</label>
-								<input type="email" id="email" name="email" required placeholder="john@example.com">
+								<label for="email">Email</label>
+								<input type="email" id="email" name="email" required placeholder="you@company.com">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="subject">Subject</label>
-							<input type="text" id="subject" name="subject" required placeholder="Project Discussion">
+							<input type="text" id="subject" name="subject" required placeholder="Job opportunity / Project / Collaboration">
 						</div>
 						<div class="form-group">
 							<label for="message">Message</label>
-							<textarea id="message" name="message" rows="6" required placeholder="Tell me about your project..."></textarea>
+							<textarea id="message" name="message" rows="5" required placeholder="Tell me about the role or project..."></textarea>
 						</div>
 						<button type="submit" class="btn-primary btn-full">
 							<i class="fas fa-paper-plane"></i> Send Message
@@ -444,42 +348,34 @@
 	</section>
 
 	<!-- Footer -->
-	<footer class="footer">
+	<footer class="footer" role="contentinfo">
 		<div class="container">
 			<div class="footer-content">
-				<div class="footer-logo">
-					<img src="images/AtiffLogo.png" alt="Atif Logo" class="logo-img footer-logo-img">
+				<p class="footer-text">Designed & engineered by Atif Adem</p>
+				<div class="footer-links">
+					<a href="https://github.com/A-T-F-10" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+					<a href="https://www.linkedin.com/in/atif-mohamed-679768243" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+					<a href="mailto:a.addam710@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
 				</div>
-				<p class="footer-text">Crafting digital experiences with code & creativity</p>
-				<div class="footer-social">
-					<a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-					<a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-					<a href="https://twitter.com/" target="_blank"><i class="fab fa-x-twitter"></i></a>
-					<a href="mailto:a.addam710@gmail.com"><i class="fas fa-envelope"></i></a>
-				</div>
-				<p class="footer-copyright">&copy; 2026 Atef Adem. All rights reserved.</p>
+				<p class="footer-copy">&copy; 2026 Atif Adem. All rights reserved.</p>
 			</div>
 		</div>
 	</footer>
 
 	<!-- Back to Top -->
-	<button class="back-to-top" id="back-to-top" aria-label="Back to top">
-		<i class="fas fa-arrow-up"></i>
-	</button>
+	<button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-	<!-- Project Detail Modal -->
-	<div class="project-modal-overlay" id="project-modal-overlay">
-		<div class="project-modal">
-			<div class="project-modal-wrapper">
-				<button class="project-modal-close" onclick="closeProjectModal()"><i class="fas fa-times"></i></button>
-				<img class="project-modal-img" id="project-modal-img" src="" alt="">
-				<div class="project-modal-body">
-					<span class="project-modal-category" id="project-modal-category"></span>
-					<h2 id="project-modal-title"></h2>
-					<p id="project-modal-desc"></p>
-					<div class="project-modal-tags" id="project-modal-tags"></div>
-					<div class="project-modal-actions" id="project-modal-actions"></div>
-				</div>
+	<!-- Project Modal -->
+	<div class="modal-overlay" id="project-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+		<div class="modal-content">
+			<button class="modal-close" onclick="closeProjectModal()" aria-label="Close"><i class="fas fa-times"></i></button>
+			<img class="modal-img" id="project-modal-img" src="" alt="" loading="lazy">
+			<div class="modal-body">
+				<span class="modal-category" id="project-modal-category"></span>
+				<h2 id="project-modal-title"></h2>
+				<p id="project-modal-desc"></p>
+				<div class="modal-tags" id="project-modal-tags"></div>
+				<div class="modal-actions" id="project-modal-actions"></div>
 			</div>
 		</div>
 	</div>
