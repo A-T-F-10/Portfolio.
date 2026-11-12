@@ -1,382 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Atif Adem — Software Engineer | Flutter, Backend & Cloud</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Atif Adem — Software Engineer | Flutter, Backend & Cloud</title>
 	<meta name="description" content="Software Engineer building scalable mobile apps, backend systems, and cloud infrastructure. Specialized in Flutter, REST APIs, and production-grade platforms.">
 	<meta name="keywords" content="Software Engineer, Flutter Developer, Backend Engineer, Cloud, Mobile Apps, Full Stack">
 	<meta name="author" content="Atif Adem">
 	<meta property="og:title" content="Atif Adem — Software Engineer">
 	<meta property="og:description" content="Building scalable digital products with Flutter, backend systems & cloud infrastructure.">
 	<meta property="og:type" content="website">
-	<meta name="theme-color" content="#09090b">
+	<meta name="theme-color" content="#0A0A0B">
+	<script>
+		// Runs before first paint: play the intro curtain once per session,
+		// and fall back to IntersectionObserver reveals where scroll-driven animations are missing.
+		(function () {
+			var d = document.documentElement;
+			d.classList.add("js");
+			try {
+				if (sessionStorage.getItem("intro-seen")) d.classList.add("no-intro");
+				else sessionStorage.setItem("intro-seen", "1");
+			} catch (e) {}
+			if (!(window.CSS && CSS.supports && CSS.supports("animation-timeline: view()"))) d.classList.add("io");
+		})();
+	</script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-	<link rel="stylesheet" href="css/custom.css">
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/site.css">
 </head>
 
 <body>
-	<div class="noise" aria-hidden="true"></div>
+	<a class="skip" href="#main">Skip to content</a>
+	<div class="progress" aria-hidden="true"></div>
+
+	<!-- Intro curtain -->
+	<div class="intro" aria-hidden="true">
+		<div class="intro-top"><span>Atif Adem — Portfolio</span><span>Mecca, KSA</span></div>
+		<div>
+			<div class="intro-row">
+				<span class="mask"><span class="intro-rise intro-big">Atif Adem<span class="accent">.</span></span></span>
+				<span class="intro-count intro-big"></span>
+			</div>
+			<div class="intro-track"><div class="intro-bar"></div></div>
+		</div>
+	</div>
 
 	<!-- Navigation -->
-	<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-		<div class="nav-container">
-			<a href="#" class="nav-logo" aria-label="Home">
-				<img src="images/AtiffLogo.png" alt="Atif Adem" class="logo-img">
+	<header class="nav fade-down d0">
+		<nav class="nav-in" aria-label="Main">
+			<a href="#top" class="logo" aria-label="Atif Adem, back to top">
+				<span class="logo-mark"></span>
+				<span>atif<span class="accent">.</span>adem</span>
 			</a>
-			<button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-				<span></span><span></span><span></span>
-			</button>
-			<ul class="nav-menu" id="nav-menu">
-				<li><a href="#home" class="nav-link active">Home</a></li>
-				<li><a href="#about" class="nav-link">About</a></li>
-				<li><a href="#skills" class="nav-link">Skills</a></li>
-				<li><a href="#projects" class="nav-link">Projects</a></li>
-				<li><a href="#contact" class="nav-link nav-cta">Let's Talk</a></li>
-			</ul>
-		</div>
-	</nav>
-
-	<!-- Hero Section -->
-	<section id="home" class="hero-section">
-		<div class="hero-container">
-			<div class="hero-content">
-				<div class="hero-badge">
-					<span class="badge-dot"></span>
-					Open to opportunities
-				</div>
-				<h1 class="hero-title">
-					Building scalable products<br>
-					with <span class="gradient-text">Flutter & backend systems</span>
-				</h1>
-				<p class="hero-description">
-					Software Engineer focused on shipping production-grade mobile apps, 
-					backend APIs, and cloud-deployed platforms. I've built systems processing 
-					millions of records and apps serving thousands of users.
-				</p>
-				<div class="hero-buttons">
-					<a href="#projects" class="btn-primary">
-						<i class="fas fa-folder-open"></i> View Projects
-					</a>
-					<a href="#contact" class="btn-outline">
-						<i class="fas fa-paper-plane"></i> Get in Touch
-					</a>
-					<a href="Atif-Adem.pdf" download class="btn-ghost" aria-label="Download Resume">
-						<i class="fas fa-download"></i> Resume
-					</a>
-				</div>
-				<div class="hero-links">
-					<a href="https://github.com/A-T-F-10" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-					<a href="https://www.linkedin.com/in/atif-mohamed-679768243/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-					<a href="mailto:a.addam710@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-				</div>
+			<div class="nav-links">
+				<a class="nl" href="#about">About</a>
+				<a class="nl" href="#work">Work</a>
+				<a class="nl" href="#stack">Stack</a>
+				<a class="nl" href="#contact">Contact</a>
 			</div>
-			<div class="hero-visual">
-				<div class="hero-card">
-					<div class="hero-card-header">
-						<span class="dot red"></span>
-						<span class="dot yellow"></span>
-						<span class="dot green"></span>
-						<span class="hero-card-file">engineer.ts</span>
+			<div class="nav-right">
+				<span class="nav-time">MECCA <span class="clock" data-clock>--:--:--</span></span>
+				<a href="#contact" class="btn btn-accent btn-sm"><span class="roll"><span>Let's talk</span><span aria-hidden="true">Let's talk</span></span></a>
+				<button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mmenu" aria-label="Open menu"><span></span><span></span></button>
+			</div>
+		</nav>
+	</header>
+
+	<div class="mmenu" id="mmenu" hidden>
+		<nav class="mmenu-links" aria-label="Mobile">
+			<a href="#about"><span class="lbl">01</span>About</a>
+			<a href="#work"><span class="lbl">02</span>Work</a>
+			<a href="#stack"><span class="lbl">03</span>Stack</a>
+			<a href="#contact"><span class="lbl">04</span>Contact</a>
+		</nav>
+		<div class="mmenu-foot">
+			<a href="mailto:a.addam710@gmail.com">a.addam710@gmail.com</a>
+			<span class="lbl">Mecca <span data-clock>--:--:--</span></span>
+		</div>
+	</div>
+
+	<main id="main">
+		<!-- Hero -->
+		<section id="top" class="hero sec">
+			<div class="hero-grid wrap">
+				<div>
+					<div class="pill-status fade-up d0"><span class="dot pulse"></span>Open to opportunities</div>
+					<p class="lbl hero-kicker fade-up d1">Software Engineer — Flutter · Backend · Cloud</p>
+					<h1 class="hero-name">
+						<span class="mask"><span class="rise d0">Atif</span></span>
+						<span class="mask"><span class="rise d1"><span class="outline-h">Adem</span><span class="accent">.</span></span></span>
+					</h1>
+					<p class="hero-build fade-up d3">I build <span class="ticker"><span class="ticker-in"><span>mobile apps.</span><span>backend APIs.</span><span>cloud platforms.</span><span>real products.</span><span aria-hidden="true">mobile apps.</span></span></span></p>
+					<p class="hero-desc fade-up d4">Software Engineer focused on shipping production-grade mobile apps, backend APIs, and cloud-deployed platforms. I've built systems processing millions of records and apps serving thousands of users.</p>
+					<div class="hero-ctas fade-up d5">
+						<a href="#work" class="btn btn-accent"><span class="roll"><span>View projects</span><span aria-hidden="true">View projects</span></span><span class="arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+						<a href="#contact" class="btn btn-line"><span class="roll"><span>Get in touch</span><span aria-hidden="true">Get in touch</span></span></a>
+						<a href="Atif-Adem.pdf" download class="btn btn-ghost"><span class="arr arr-up"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></span>Resume</a>
 					</div>
-					<div class="hero-card-body">
-						<pre><code><span class="ck">const</span> <span class="cv">engineer</span> = {
-  <span class="cp">name</span>: <span class="cs">"Atif Adem"</span>,
-  <span class="cp">role</span>: <span class="cs">"Software Engineer"</span>,
-  <span class="cp">focus</span>: [<span class="cs">"Flutter"</span>, <span class="cs">"Backend"</span>, <span class="cs">"Cloud"</span>],
-  <span class="cp">shipped</span>: <span class="cs">"production systems"</span>,
-  <span class="cp">location</span>: <span class="cs">"Saudi Arabia"</span>,
-  <span class="cp">available</span>: <span class="cb">true</span>
-};</code></pre>
+					<div class="socials fade-up d6">
+						<a class="ibtn" href="https://github.com/A-T-F-10" target="_blank" rel="noopener" aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+						<a class="ibtn" href="https://www.linkedin.com/in/atif-mohamed-679768243/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+						<a class="ibtn" href="mailto:a.addam710@gmail.com" aria-label="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
 
-	<!-- Metrics -->
-	<section class="metrics-section" aria-label="Key metrics">
-		<div class="container">
-			<div class="metrics-grid">
-				<div class="metric-item">
-					<span class="metric-number" data-count="10">0</span>
-					<span class="metric-label">Mobile Apps Shipped</span>
-				</div>
-				<div class="metric-item">
-					<span class="metric-number" data-count="7">0</span>
-					<span class="metric-label">Backend Systems</span>
-				</div>
-				<div class="metric-item">
-					<span class="metric-number" data-count="3">0</span>
-					<span class="metric-label">Years Experience</span>
-				</div>
-				<div class="metric-item">
-					<span class="metric-number" data-count="2">0</span>
-					<span class="metric-label">Cloud Deployments</span>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- About Section -->
-	<section id="about" class="section about-section">
-		<div class="container">
-			<div class="section-header">
-				<span class="section-label">About</span>
-				<h2 class="section-title">Engineering products that solve real problems</h2>
-			</div>
-			<div class="about-grid">
-				<div class="about-content">
-					<p class="about-lead">
-						I'm a Software Engineer with 3+ years of hands-on experience delivering 
-						production-grade platforms and cross-platform mobile applications.
-					</p>
-					<p class="about-text">
-						I've built enterprise systems that process millions of data entries for Hajj operations 
-						under the Saudi Ministry of Hajj and Umrah, developed integrated expo ecosystems 
-						with AI-powered engines, and created cross-platform apps used by thousands of users.
-					</p>
-					<p class="about-text">
-						My approach is product-focused: I care about architecture, performance, user experience, 
-						and shipping reliable software. Whether it's designing REST APIs, building Flutter apps 
-						with clean state management, or deploying to cloud infrastructure — I focus on 
-						making systems that work at scale.
-					</p>
-					<div class="about-values">
-						<div class="value-item">
-							<i class="fas fa-cube"></i>
-							<div><strong>Systems Thinking</strong><span>Architecture-first approach</span></div>
+				<div class="hero-visual fade-up d2">
+					<div class="tilt" id="tilt">
+						<div class="portrait clip-in d2">
+							<img src="images/profile.jpg" alt="Portrait of Atif Adem" width="1024" height="1536" fetchpriority="high">
 						</div>
-						<div class="value-item">
-							<i class="fas fa-bolt"></i>
-							<div><strong>Product Focus</strong><span>Ship features that solve problems</span></div>
+						<div class="float-a"><span class="chip-glass fade-up d6"><span class="chip-sq"></span>Flutter · Dart</span></div>
+						<div class="float-b"><span class="chip-glass fade-up d7"><span class="chip-ci"></span>Laravel · Node.js</span></div>
+						<div class="term fade-up d7" aria-hidden="true">
+							<div class="term-dots"><span></span><span></span><span></span></div>
+							<span class="ty t1" style="--c:10;width:10ch"><span class="accent">~</span> $ whoami</span>
+							<span class="to t2 term-out">atif — software engineer</span>
+							<span class="ty t3" style="--c:15;width:15ch"><span class="accent">~</span> $ stack --core</span>
+							<span class="to t4 term-out">flutter laravel postgres</span>
+							<span class="ty t5" style="--c:10;width:10ch"><span class="accent">~</span> $ status</span>
+							<span class="to t6"><span class="accent">●</span> open to opportunities<span class="caret"></span></span>
 						</div>
-						<div class="value-item">
-							<i class="fas fa-layer-group"></i>
-							<div><strong>Full Stack</strong><span>Mobile to backend to deployment</span></div>
-						</div>
-					</div>
-				</div>
-				<div class="about-sidebar">
-					<div class="detail-card">
-						<h4>Quick Info</h4>
-						<ul class="detail-list">
-							<li><span class="dk">Location</span><span class="dv">Mecca, Saudi Arabia</span></li>
-							<li><span class="dk">Email</span><span class="dv">a.addam710@gmail.com</span></li>
-							<li><span class="dk">Focus</span><span class="dv">Flutter, Backend, Cloud</span></li>
-							<li><span class="dk">Languages</span><span class="dv">Arabic, English</span></li>
-							<li><span class="dk">Status</span><span class="dv dv-green">Open to work</span></li>
-						</ul>
-					</div>
-					<div class="about-ctas">
-						<a href="#contact" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Hire Me</a>
-						<a href="Atif-Adem.pdf" download class="btn-outline btn-full"><i class="fas fa-download"></i> Download CV</a>
+						<a class="badge" href="#contact" aria-label="Available for work — get in touch">
+							<svg class="ring" viewBox="0 0 112 112" aria-hidden="true"><defs><path id="badge-ring" d="M56,56 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text class="ring-text"><textPath href="#badge-ring" textLength="272" lengthAdjust="spacing">AVAILABLE FOR WORK · BASED IN MECCA · </textPath></text></svg>
+							<span class="badge-core"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+						</a>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-
-	<!-- Skills Section -->
-	<section id="skills" class="section skills-section">
-		<div class="container">
-			<div class="section-header">
-				<span class="section-label">Technical Skills</span>
-				<h2 class="section-title">Technologies I work with</h2>
-				<p class="section-subtitle">Organized by depth of experience — honest and transparent.</p>
+			<div class="hero-foot wrap fade-up d7">
+				<span class="lbl">21.42° N — 39.83° E</span>
+				<a href="#about" class="lbl scroll-cue">Scroll<span class="scroll-line"></span></a>
+				<span class="lbl hide-m">Based in Mecca, KSA</span>
 			</div>
+		</section>
 
-			<div class="skills-tiers">
-				<div class="skill-tier">
-					<div class="tier-header">
-						<span class="tier-badge tier-core">Core Expertise</span>
-						<span class="tier-desc">Production experience, daily use</span>
-					</div>
-					<div class="tech-grid">
-						<div class="tech-chip"><i class="fab fa-flutter"></i> Flutter</div>
-						<div class="tech-chip"><i class="fas fa-code"></i> Dart</div>
-						<div class="tech-chip"><i class="fas fa-fire"></i> Firebase</div>
-						<div class="tech-chip"><i class="fas fa-plug"></i> REST APIs</div>
-						<div class="tech-chip"><i class="fab fa-php"></i> Laravel / PHP</div>
-						<div class="tech-chip"><i class="fas fa-cubes"></i> Bloc / Riverpod</div>
-						<div class="tech-chip"><i class="fas fa-database"></i> MySQL / PostgreSQL</div>
-						<div class="tech-chip"><i class="fab fa-git-alt"></i> Git</div>
-					</div>
-				</div>
-
-				<div class="skill-tier">
-					<div class="tier-header">
-						<span class="tier-badge tier-working">Working Knowledge</span>
-						<span class="tier-desc">Project experience, confident usage</span>
-					</div>
-					<div class="tech-grid">
-						<div class="tech-chip"><i class="fab fa-docker"></i> Docker</div>
-						<div class="tech-chip"><i class="fab fa-node-js"></i> Node.js</div>
-						<div class="tech-chip"><i class="fab fa-python"></i> Python</div>
-						<div class="tech-chip"><i class="fas fa-terminal"></i> Linux / Shell</div>
-						<div class="tech-chip"><i class="fas fa-code-branch"></i> CI/CD</div>
-						<div class="tech-chip"><i class="fab fa-github"></i> GitHub Actions</div>
-						<div class="tech-chip"><i class="fab fa-google"></i> Google Cloud</div>
-						<div class="tech-chip"><i class="fas fa-bolt"></i> Supabase</div>
-						<div class="tech-chip"><i class="fas fa-cube"></i> Appwrite</div>
-					</div>
-				</div>
-
-				<div class="skill-tier">
-					<div class="tier-header">
-						<span class="tier-badge tier-exploring">Currently Exploring</span>
-						<span class="tier-desc">Learning & building with</span>
-					</div>
-					<div class="tech-grid">
-						<div class="tech-chip"><i class="fas fa-dharmachakra"></i> Kubernetes</div>
-						<div class="tech-chip"><i class="fab fa-aws"></i> AWS</div>
-						<div class="tech-chip"><i class="fas fa-robot"></i> AI Integrations</div>
-						<div class="tech-chip"><i class="fas fa-project-diagram"></i> GraphQL</div>
-						<div class="tech-chip"><i class="fas fa-network-wired"></i> Microservices</div>
-					</div>
+		<!-- Stack bands -->
+		<section class="bands" aria-hidden="true">
+			<div class="band band-a">
+				<div class="marquee">
+					<span class="mq">Flutter</span><span class="mq-sep"></span><span class="mq">Dart</span><span class="mq-sep"></span><span class="mq">Laravel</span><span class="mq-sep"></span><span class="mq">Node.js</span><span class="mq-sep"></span><span class="mq">PostgreSQL</span><span class="mq-sep"></span><span class="mq">Firebase</span><span class="mq-sep"></span><span class="mq">Docker</span><span class="mq-sep"></span><span class="mq">Google Cloud</span><span class="mq-sep"></span><span class="mq">Supabase</span><span class="mq-sep"></span><span class="mq">REST APIs</span><span class="mq-sep"></span>
+					<span class="mq">Flutter</span><span class="mq-sep"></span><span class="mq">Dart</span><span class="mq-sep"></span><span class="mq">Laravel</span><span class="mq-sep"></span><span class="mq">Node.js</span><span class="mq-sep"></span><span class="mq">PostgreSQL</span><span class="mq-sep"></span><span class="mq">Firebase</span><span class="mq-sep"></span><span class="mq">Docker</span><span class="mq-sep"></span><span class="mq">Google Cloud</span><span class="mq-sep"></span><span class="mq">Supabase</span><span class="mq-sep"></span><span class="mq">REST APIs</span><span class="mq-sep"></span>
 				</div>
 			</div>
-		</div>
-	</section>
-
-	<!-- Projects Section -->
-	<section id="projects" class="section projects-section">
-		<div class="container">
-			<div class="section-header">
-				<span class="section-label">Projects</span>
-				<h2 class="section-title">Selected engineering work</h2>
-				<p class="section-subtitle">Real systems built for real users — not tutorial projects.</p>
-			</div>
-
-			<div class="project-filters">
-				<button class="filter-btn active" data-filter="all">All</button>
-				<button class="filter-btn" data-filter="app">Mobile Apps</button>
-				<button class="filter-btn" data-filter="web">Web Platforms</button>
-				<button class="filter-btn" data-filter="backend">Backend</button>
-			</div>
-
-			<div class="projects-grid" id="projects-grid"></div>
-		</div>
-	</section>
-
-	<!-- Currently Building -->
-	<section class="section building-section">
-		<div class="container">
-			<div class="section-header">
-				<span class="section-label">What's Next</span>
-				<h2 class="section-title">What I'm currently exploring</h2>
-			</div>
-			<div class="building-grid">
-				<div class="building-card">
-					<div class="building-icon"><i class="fas fa-cloud"></i></div>
-					<h4>Cloud Infrastructure</h4>
-					<p>Deepening expertise in Kubernetes, AWS, and infrastructure-as-code for production deployments.</p>
-				</div>
-				<div class="building-card">
-					<div class="building-icon"><i class="fas fa-robot"></i></div>
-					<h4>AI-Powered Features</h4>
-					<p>Integrating LLM APIs and machine learning capabilities into mobile and web applications.</p>
-				</div>
-				<div class="building-card">
-					<div class="building-icon"><i class="fas fa-mobile-alt"></i></div>
-					<h4>Open Source Contributions</h4>
-					<p>Contributing reusable packages and architectural patterns to the Flutter community.</p>
+			<div class="band band-b">
+				<div class="marquee rev">
+					<span class="mq">Mobile apps</span><span class="mq-sep"></span><span class="mq">Backend systems</span><span class="mq-sep"></span><span class="mq">Cloud deployments</span><span class="mq-sep"></span><span class="mq">Real-time dashboards</span><span class="mq-sep"></span><span class="mq">Production systems</span><span class="mq-sep"></span><span class="mq">Mecca, KSA</span><span class="mq-sep"></span>
+					<span class="mq">Mobile apps</span><span class="mq-sep"></span><span class="mq">Backend systems</span><span class="mq-sep"></span><span class="mq">Cloud deployments</span><span class="mq-sep"></span><span class="mq">Real-time dashboards</span><span class="mq-sep"></span><span class="mq">Production systems</span><span class="mq-sep"></span><span class="mq">Mecca, KSA</span><span class="mq-sep"></span>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<!-- Contact Section -->
-	<section id="contact" class="section contact-section">
-		<div class="container">
-			<div class="section-header">
-				<span class="section-label">Contact</span>
-				<h2 class="section-title">Let's build something together</h2>
-				<p class="section-subtitle">Open to full-time roles, contract work, and collaboration.</p>
-			</div>
+		<!-- About -->
+		<section id="about" class="about sec">
+			<div class="wrap">
+				<div class="sh">
+					<div class="sh-row"><span class="lbl">01</span><span class="line-grow"></span><span class="lbl">About</span></div>
+				</div>
+				<p class="statement fill">I'm a Software Engineer with 3+ years of hands-on experience delivering production-grade platforms and cross-platform mobile applications.</p>
 
-			<div class="contact-grid">
-				<div class="contact-info">
-					<div class="contact-card">
-						<i class="fas fa-envelope"></i>
-						<div><span class="contact-label">Email</span><a href="mailto:a.addam710@gmail.com">a.addam710@gmail.com</a></div>
-					</div>
-					<div class="contact-card">
-						<i class="fab fa-whatsapp"></i>
-						<div><span class="contact-label">WhatsApp</span><a href="https://wa.me/966541249651" target="_blank">+966 541 249 651</a></div>
-					</div>
-					<div class="contact-card">
-						<i class="fas fa-map-marker-alt"></i>
-						<div><span class="contact-label">Location</span><span>Mecca, Saudi Arabia</span></div>
-					</div>
-					<div class="contact-links-row">
-						<a href="https://github.com/A-T-F-10" target="_blank" rel="noopener" class="contact-link-btn"><i class="fab fa-github"></i> GitHub</a>
-						<a href="https://www.linkedin.com/in/atif-mohamed-679768243/" target="_blank" rel="noopener" class="contact-link-btn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-					</div>
+				<div class="metrics">
+					<div class="metric sr"><div class="metric-num"><span class="sr-only">10</span><span class="count" aria-hidden="true" style="--to:10"></span><span class="accent">+</span></div><div class="lbl">Mobile apps shipped</div></div>
+					<div class="metric sr"><div class="metric-num"><span class="sr-only">7</span><span class="count" aria-hidden="true" style="--to:7"></span><span class="accent">+</span></div><div class="lbl">Backend systems</div></div>
+					<div class="metric sr"><div class="metric-num"><span class="sr-only">3</span><span class="count" aria-hidden="true" style="--to:3"></span><span class="accent">+</span></div><div class="lbl">Years experience</div></div>
+					<div class="metric sr"><div class="metric-num"><span class="sr-only">2</span><span class="count" aria-hidden="true" style="--to:2"></span><span class="accent">+</span></div><div class="lbl">Cloud deployments</div></div>
 				</div>
 
-				<div class="contact-form-wrapper">
-					<form id="contact-form" class="contact-form">
-						<div class="form-row">
-							<div class="form-group">
-								<label for="name">Name</label>
-								<input type="text" id="name" name="name" required placeholder="Your name">
+				<div class="about-grid">
+					<div class="about-text sr">
+						<p>I've built enterprise systems that process millions of data entries for Hajj operations under the Saudi Ministry of Hajj and Umrah, developed integrated expo ecosystems with AI-powered engines, and created cross-platform apps used by thousands of users.</p>
+						<p>My approach is product-focused: I care about architecture, performance, user experience, and shipping reliable software. Whether it's designing REST APIs, building Flutter apps with clean state management, or deploying to cloud infrastructure — I focus on making systems that work at scale.</p>
+						<div class="values">
+							<div class="value">
+								<span class="value-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
+								<strong>Systems Thinking</strong><span>Architecture-first approach</span>
 							</div>
-							<div class="form-group">
-								<label for="email">Email</label>
-								<input type="email" id="email" name="email" required placeholder="you@company.com">
+							<div class="value">
+								<span class="value-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></span>
+								<strong>Product Focus</strong><span>Ship features that solve problems</span>
+							</div>
+							<div class="value">
+								<span class="value-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span>
+								<strong>Full Stack</strong><span>Mobile to backend to deployment</span>
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="subject">Subject</label>
-							<input type="text" id="subject" name="subject" required placeholder="Job opportunity / Project / Collaboration">
+					</div>
+					<div class="sr">
+						<div class="info glow">
+							<div class="info-head">
+								<span class="lbl">Quick info</span>
+								<span class="avail"><span class="dot pulse"></span>Available</span>
+							</div>
+							<dl>
+								<div class="info-row"><dt>Location</dt><dd>Mecca, Saudi Arabia</dd></div>
+								<div class="info-row"><dt>Email</dt><dd><a href="mailto:a.addam710@gmail.com">a.addam710@gmail.com</a></dd></div>
+								<div class="info-row"><dt>Focus</dt><dd>Flutter, Backend, Cloud</dd></div>
+								<div class="info-row"><dt>Languages</dt><dd>Arabic, English</dd></div>
+								<div class="info-row"><dt>Status</dt><dd class="accent">Open to work</dd></div>
+							</dl>
 						</div>
-						<div class="form-group">
-							<label for="message">Message</label>
-							<textarea id="message" name="message" rows="5" required placeholder="Tell me about the role or project..."></textarea>
+						<div class="info-ctas">
+							<a href="#contact" class="btn btn-accent"><span class="roll"><span>Hire me</span><span aria-hidden="true">Hire me</span></span></a>
+							<a href="Atif-Adem.pdf" download class="btn btn-line"><span class="arr arr-up"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></span>Download CV</a>
 						</div>
-						<button type="submit" class="btn-primary btn-full">
-							<i class="fas fa-paper-plane"></i> Send Message
-						</button>
-					</form>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+
+		<!-- Work -->
+		<section id="work" class="work sec">
+			<div class="wrap">
+				<div class="sh">
+					<div class="sh-row"><span class="lbl">02</span><span class="line-grow"></span><span class="lbl">Selected work</span></div>
+					<div class="sh-split">
+						<div>
+							<h2 class="h2 h2-xl srm"><span>Selected<br>engineering <span class="outline-h">work</span><sup>(<span id="work-count">12</span>)</sup></span></h2>
+							<p class="sh-note sh-note-lg">Real systems built for real users — not tutorial projects. Pick one to open the case.</p>
+						</div>
+						<div class="seg" id="seg" role="group" aria-label="Filter projects">
+							<span class="seg-ind" aria-hidden="true"></span>
+							<button type="button" class="seg-btn on" data-filter="all" aria-pressed="true">All<span class="n"></span></button>
+							<button type="button" class="seg-btn" data-filter="app" aria-pressed="false">Mobile apps<span class="n"></span></button>
+							<button type="button" class="seg-btn" data-filter="web" aria-pressed="false">Web platforms<span class="n"></span></button>
+						</div>
+					</div>
+				</div>
+				<div class="bento gb" id="bento"></div>
+				<noscript><p class="sh-note">Turn on JavaScript to browse the projects.</p></noscript>
+			</div>
+		</section>
+
+		<!-- Stack -->
+		<section id="stack" class="sec">
+			<div class="wrap">
+				<div class="sh">
+					<div class="sh-row"><span class="lbl">03</span><span class="line-grow"></span><span class="lbl">Stack</span></div>
+					<div class="sh-split">
+						<h2 class="h2 srm"><span>Technologies I work with</span></h2>
+						<p class="sh-note">Organized by depth of experience — honest and transparent.</p>
+					</div>
+				</div>
+				<div class="tiers">
+					<div class="card tier glow lift">
+						<div class="tier-top"><span class="lbl">Tier 01</span><span class="bars" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span></span></div>
+						<div><h3>Core expertise</h3><p class="card-note">Production experience, daily use</p></div>
+						<div class="chips">
+							<span class="chip" style="--i:0">Flutter</span><span class="chip" style="--i:1">Dart</span><span class="chip" style="--i:2">Firebase</span><span class="chip" style="--i:3">REST APIs</span><span class="chip" style="--i:4">Laravel / PHP</span><span class="chip" style="--i:5">Bloc / Riverpod</span><span class="chip" style="--i:6">MySQL / PostgreSQL</span><span class="chip" style="--i:7">Git</span>
+						</div>
+					</div>
+					<div class="card tier glow lift">
+						<div class="tier-top"><span class="lbl">Tier 02</span><span class="bars" aria-hidden="true"><span class="on"></span><span class="on"></span><span></span></span></div>
+						<div><h3>Working knowledge</h3><p class="card-note">Project experience, confident usage</p></div>
+						<div class="chips">
+							<span class="chip" style="--i:0">Docker</span><span class="chip" style="--i:1">Node.js</span><span class="chip" style="--i:2">Python</span><span class="chip" style="--i:3">Linux / Shell</span><span class="chip" style="--i:4">CI/CD</span><span class="chip" style="--i:5">GitHub Actions</span><span class="chip" style="--i:6">Google Cloud</span><span class="chip" style="--i:7">Supabase</span><span class="chip" style="--i:8">Appwrite</span>
+						</div>
+					</div>
+					<div class="card tier glow lift">
+						<div class="tier-top"><span class="lbl">Tier 03</span><span class="bars" aria-hidden="true"><span class="on"></span><span></span><span></span></span></div>
+						<div><h3>Currently exploring</h3><p class="card-note">Learning &amp; building with</p></div>
+						<div class="chips">
+							<span class="chip" style="--i:0">Kubernetes</span><span class="chip" style="--i:1">AWS</span><span class="chip" style="--i:2">AI Integrations</span><span class="chip" style="--i:3">GraphQL</span><span class="chip" style="--i:4">Microservices</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- What's next -->
+		<section class="next sec">
+			<div class="wrap">
+				<div class="sh">
+					<div class="sh-row"><span class="lbl">04</span><span class="line-grow"></span><span class="lbl">What's next</span></div>
+					<h2 class="h2 srm"><span>What I'm currently exploring</span></h2>
+				</div>
+				<div class="tiers">
+					<div class="card next-card sr glow lift">
+						<span class="orbit"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span>
+						<div><h3>Cloud Infrastructure</h3><p>Deepening expertise in Kubernetes, AWS, and infrastructure-as-code for production deployments.</p></div>
+					</div>
+					<div class="card next-card sr glow lift">
+						<span class="orbit"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>
+						<div><h3>AI-Powered Features</h3><p>Integrating LLM APIs and machine learning capabilities into mobile and web applications.</p></div>
+					</div>
+					<div class="card next-card sr glow lift">
+						<span class="orbit"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg></span>
+						<div><h3>Open Source Contributions</h3><p>Contributing reusable packages and architectural patterns to the Flutter community.</p></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact -->
+		<section id="contact" class="contact sec">
+			<div class="wrap">
+				<div class="sh">
+					<div class="sh-row"><span class="lbl">05</span><span class="line-grow"></span><span class="lbl">Contact</span></div>
+				</div>
+				<div class="contact-grid">
+					<div class="sr">
+						<h2 class="big-head">Let's build <span class="outline">something</span> together.</h2>
+						<p class="contact-note">Open to full-time roles, contract work, and collaboration.</p>
+						<a href="mailto:a.addam710@gmail.com" class="biglink">a.addam710@gmail.com<span class="arr accent"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+						<div class="crows">
+							<a class="crow" href="https://wa.me/966541249651" target="_blank" rel="noopener"><span class="crow-k">WhatsApp</span><span class="crow-v">+966 541 249 651</span><span class="arr arr-ne"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+							<a class="crow" href="https://github.com/A-T-F-10" target="_blank" rel="noopener"><span class="crow-k">GitHub</span><span class="crow-v">A-T-F-10</span><span class="arr arr-ne"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+							<a class="crow" href="https://www.linkedin.com/in/atif-mohamed-679768243/" target="_blank" rel="noopener"><span class="crow-k">LinkedIn</span><span class="crow-v">Atif Mohamed</span><span class="arr arr-ne"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+							<div class="crow"><span class="crow-k">Location</span><span class="crow-v">Mecca, Saudi Arabia</span><span class="crow-time" data-clock>--:--:--</span></div>
+						</div>
+					</div>
+					<div class="sr">
+						<form id="contact-form" class="form-card" novalidate>
+							<div class="form-head">
+								<span class="form-title">Send a message</span>
+								<span class="lbl">Reply via email</span>
+							</div>
+							<div class="form-row">
+								<div class="fgroup"><label class="flabel" for="cf-name">Name</label><input class="field" id="cf-name" name="name" type="text" autocomplete="name" required placeholder="Your name"></div>
+								<div class="fgroup"><label class="flabel" for="cf-email">Email</label><input class="field" id="cf-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com"></div>
+							</div>
+							<div class="fgroup"><label class="flabel" for="cf-subject">Subject</label><input class="field" id="cf-subject" name="subject" type="text" required placeholder="Job opportunity / Project / Collaboration"></div>
+							<div class="fgroup"><label class="flabel" for="cf-message">Message</label><textarea class="field" id="cf-message" name="message" rows="4" required placeholder="Tell me about the role or project..."></textarea></div>
+							<button type="submit" class="btn btn-accent btn-block" id="cf-submit"><span class="roll"><span>Send message</span><span aria-hidden="true">Send message</span></span><span class="arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></span></button>
+							<p class="form-status" id="cf-status" role="status"></p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
 
 	<!-- Footer -->
-	<footer class="footer" role="contentinfo">
-		<div class="container">
-			<div class="footer-content">
-				<p class="footer-text">Designed & engineered by Atif Adem</p>
-				<div class="footer-links">
-					<a href="https://github.com/A-T-F-10" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-					<a href="https://www.linkedin.com/in/atif-mohamed-679768243" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-					<a href="mailto:a.addam710@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+	<footer class="footer">
+		<div class="wrap">
+			<div class="foot-top">
+				<span class="lbl">Local time in Mecca · <span class="clock" data-clock>--:--:--</span> GMT+3</span>
+				<a href="#top" class="btn btn-line btn-sm"><span class="roll"><span>Back to top</span><span aria-hidden="true">Back to top</span></span><span class="arr arr-up"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></span></a>
+			</div>
+			<div class="wm" aria-hidden="true"><span>A</span><span>T</span><span>I</span><span>F</span><span class="wm-dot"></span><span>A</span><span>D</span><span>E</span><span>M</span></div>
+			<div class="foot-bottom">
+				<p>Designed &amp; engineered by Atif Adem</p>
+				<div class="socials">
+					<a class="ibtn" href="https://github.com/A-T-F-10" target="_blank" rel="noopener" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+					<a class="ibtn" href="https://www.linkedin.com/in/atif-mohamed-679768243/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+					<a class="ibtn" href="mailto:a.addam710@gmail.com" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
 				</div>
-				<p class="footer-copy">&copy; 2026 Atif Adem. All rights reserved.</p>
+				<p>&copy; 2026 Atif Adem. All rights reserved.</p>
 			</div>
 		</div>
 	</footer>
 
-	<!-- Back to Top -->
-	<button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-
-	<!-- Project Modal -->
-	<div class="modal-overlay" id="project-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
-		<div class="modal-content">
-			<button class="modal-close" onclick="closeProjectModal()" aria-label="Close"><i class="fas fa-times"></i></button>
-			<img class="modal-img" id="project-modal-img" src="" alt="" loading="lazy">
-			<div class="modal-body">
-				<span class="modal-category" id="project-modal-category"></span>
-				<h2 id="project-modal-title"></h2>
-				<p id="project-modal-desc"></p>
-				<div class="modal-tags" id="project-modal-tags"></div>
-				<div class="modal-actions" id="project-modal-actions"></div>
+	<!-- Project case view -->
+	<div class="ov" id="case" role="dialog" aria-modal="true" aria-labelledby="case-title" hidden>
+		<div class="ov-back" data-close></div>
+		<div class="ov-panel" id="case-panel">
+			<div class="ov-bar">
+				<span class="lbl"><span id="case-num">01</span> / <span id="case-total">12</span><span class="ov-cat"> — <span id="case-cat"></span></span></span>
+				<div class="ov-actions">
+					<button type="button" class="ov-btn" id="case-prev" aria-label="Previous project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></button>
+					<button type="button" class="ov-btn" id="case-next" aria-label="Next project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+					<button type="button" class="ov-btn ov-close" id="case-close" aria-label="Close project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+				</div>
 			</div>
+			<div class="ov-body" id="case-body"></div>
+			<button type="button" class="ov-next" id="case-next-big"><span><span class="lbl">Next project</span><span class="nx" id="case-next-name"></span></span><span class="barr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></button>
 		</div>
 	</div>
 
